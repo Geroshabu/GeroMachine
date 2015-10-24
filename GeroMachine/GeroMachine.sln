@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 14 for Windows Desktop
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeroMachine", "GeroMachine\GeroMachine.csproj", "{B83B2BC3-D685-415B-AE64-5944A4A451B3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeroMachineSample", "GeroMachineSample\GeroMachineSample.csproj", "{CA464A14-8C47-4F1A-94A5-2569629ED274}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeroMachine", "GeroMachine\GeroMachine.csproj", "{B83B2BC3-D685-415B-AE64-5944A4A451B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
