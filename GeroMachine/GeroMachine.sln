@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeroMachine", "GeroMachine\GeroMachine.csproj", "{B83B2BC3-D685-415B-AE64-5944A4A451B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeroMachineSample", "GeroMachineSample\GeroMachineSample.csproj", "{CA464A14-8C47-4F1A-94A5-2569629ED274}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B83B2BC3-D685-415B-AE64-5944A4A451B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B83B2BC3-D685-415B-AE64-5944A4A451B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B83B2BC3-D685-415B-AE64-5944A4A451B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA464A14-8C47-4F1A-94A5-2569629ED274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA464A14-8C47-4F1A-94A5-2569629ED274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA464A14-8C47-4F1A-94A5-2569629ED274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA464A14-8C47-4F1A-94A5-2569629ED274}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
