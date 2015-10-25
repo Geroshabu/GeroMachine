@@ -5,6 +5,8 @@ install:
 - ps: choco install doxygen.portable
 build:
   verbosity: minimal
+after_build:
+- cmd: doxygen Doxyfile
 artifacts:
 - path: GeroMachine\GeroMachineSample\bin\Release\GeroMachineSample.exe
   name: GeroMachineSample
