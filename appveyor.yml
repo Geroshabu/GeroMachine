@@ -12,3 +12,5 @@ artifacts:
   name: GeroMachineSample
 - path: GeroMachine\GeroMachine\bin\Release\GeroMachine.dll
   name: GeroMachine
+- path: html
+  name: html
