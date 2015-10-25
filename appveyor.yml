@@ -3,3 +3,8 @@ configuration: Release
 platform: Any CPU
 build:
   verbosity: minimal
+artifacts:
+- path: GeroMachine\GeroMachineSample\bin\Release\GeroMachineSample.exe
+  name: GeroMachineSample
+- path: GeroMachine\GeroMachine\bin\Release\GeroMachine.dll
+  name: GeroMachine
