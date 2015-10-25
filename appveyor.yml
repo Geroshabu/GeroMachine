@@ -1,6 +1,8 @@
 version: 1.0.{build}
 configuration: Release
 platform: Any CPU
+install:
+- ps: choco install doxygen.portable
 build:
   verbosity: minimal
 artifacts:
