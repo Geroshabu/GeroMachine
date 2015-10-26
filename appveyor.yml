@@ -14,3 +14,8 @@ artifacts:
   name: GeroMachine
 - path: html
   name: html
+deploy:
+- provider: GitHub
+  auth_token:
+    secure: OW1vwaV9TZfKnCNF5Acpeun8lfUKbZOmu/6fM6HjJ4ubgi0RExv6vTRRbLKnXDAI
+
