@@ -1,6 +1,11 @@
 version: 1.0.{build}
 configuration: Release
 platform: Any CPU
+environment:
+  GitHubAccessToken:
+    secure: OW1vwaV9TZfKnCNF5Acpeun8lfUKbZOmu/6fM6HjJ4ubgi0RExv6vTRRbLKnXDAI
+  UserName: Geroshabu
+  MailAddress: oonstks@gmail.com
 install:
 - ps: choco install doxygen.portable
 build:
