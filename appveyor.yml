@@ -18,7 +18,7 @@ after_build:
 
     git config --global push.default matching
 
-    git clone --quiet https://github.com/Geroshabu/Geroshabu.github.io.git C:\projects\gh-pages
+    git clone --quiet --branch=gh-pages https://github.com/Geroshabu/Geroshabu.github.io.git C:\projects\gh-pages
 
     cd C:/projects/gh-pages
 
