@@ -1,4 +1,4 @@
-git clone https://github.com/Geroshabu/Geroshabu.github.io.git C:\projects\gh-pages
+git clone --branch=gh-pages https://github.com/Geroshabu/Geroshabu.github.io.git C:\projects\gh-pages
 cd C:/projects/gh-pages
 if exist html (rd html /s /q)
 doxygen C:/projects/GeroMachine/Doxyfile
