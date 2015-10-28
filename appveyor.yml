@@ -1,4 +1,7 @@
 version: 1.0.{build}
+branches:
+  except:
+  - gh-pages
 configuration: Release
 platform: Any CPU
 environment:
@@ -18,7 +21,7 @@ after_build:
 
     git config --global push.default matching
 
-    git clone --quiet --branch=gh-pages https://github.com/Geroshabu/Geroshabu.github.io.git C:\projects\gh-pages
+    git clone --quiet --branch=gh-pages https://github.com/Geroshabu/GeroMachine.git C:\projects\gh-pages
 
     cd C:/projects/gh-pages
 
@@ -34,7 +37,7 @@ after_build:
 
     git commit -m "auto commit doxygen products by AppVeyor" -m %APPVEYOR_REPO_COMMIT%
 
-    git push --quiet https://%GitHubAccessToken%@github.com/Geroshabu/Geroshabu.github.io gh-pages
+    git push --quiet https://%GitHubAccessToken%@github.com/Geroshabu/GeroMachine gh-pages
 artifacts:
 - path: GeroMachine\GeroMachineSample\bin\Release\GeroMachineSample.exe
   name: GeroMachineSample
