@@ -34,7 +34,7 @@ after_build:
 
     git commit -m "auto commit doxygen products by AppVeyor" -m %APPVEYOR_REPO_COMMIT%
 
-    git push --quiet https://%GitHubAccessToken%@github.com/Geroshabu/Geroshabu.github.io master
+    git push --quiet https://%GitHubAccessToken%@github.com/Geroshabu/Geroshabu.github.io gh-pages
 artifacts:
 - path: GeroMachine\GeroMachineSample\bin\Release\GeroMachineSample.exe
   name: GeroMachineSample
