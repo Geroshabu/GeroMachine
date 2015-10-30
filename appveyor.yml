@@ -1,7 +1,8 @@
 version: 1.0.{build}
 branches:
-  except:
-  - gh-pages
+  only:
+  - master
+  - develop
 configuration: Release
 platform: Any CPU
 environment:
