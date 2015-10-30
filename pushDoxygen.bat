@@ -22,7 +22,7 @@ if "%APPVEYOR_PULL_REQUEST_NUMBER%"=="" (
         if exist latex (rd latex /s /q)
         cd html
         git add --all .
-        git commit -m "auto commit doxygen products by AppVeyor" -m %APPVEYOR_REPO_COMMIT%
+        git commit -m "auto commit doxygen products (develop version) by AppVeyor" -m %APPVEYOR_REPO_COMMIT%
         git push --quiet https://%GitHubAccessToken%@github.com/Geroshabu/GeroMachine gh-pages
     )
 )
