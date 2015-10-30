@@ -1,0 +1,22 @@
+version: 1.0.{build}
+branches:
+  except:
+  - gh-pages
+configuration: Release
+platform: Any CPU
+environment:
+  GitHubAccessToken:
+    secure: OW1vwaV9TZfKnCNF5Acpeun8lfUKbZOmu/6fM6HjJ4ubgi0RExv6vTRRbLKnXDAI
+  UserName: Geroshabu
+  MailAddress: oonstks@gmail.com
+install:
+- ps: choco install doxygen.portable
+build:
+  verbosity: minimal
+after_build:
+- cmd: ./pushDoxygen.bat
+artifacts:
+- path: GeroMachine\GeroMachineSample\bin\Release\GeroMachineSample.exe
+  name: GeroMachineSample
+- path: GeroMachine\GeroMachine\bin\Release\GeroMachine.dll
+  name: GeroMachine
