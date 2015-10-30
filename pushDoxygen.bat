@@ -15,6 +15,8 @@ if "%APPVEYOR_PULL_REQUEST_NUMBER%"=="" (
     ) else if "%APPVEYOR_REPO_BRANCH%"=="develop" (
         git clone --quiet --branch=gh-pages https://github.com/Geroshabu/GeroMachine.git C:\projects\gh-pages
         cd C:/projects/gh-pages
+        if not exist develop (mkdir develop)
+        cd develop
         if exist html (rd html /s /q)
         doxygen C:/projects/GeroMachine/Doxyfile
         if exist latex (rd latex /s /q)
