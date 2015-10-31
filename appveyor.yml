@@ -11,6 +11,8 @@ environment:
   MailAddress: oonstks@gmail.com
 install:
 - ps: choco install doxygen.portable
+before_build:
+- cmd: nuget restore GeroMachine\GeroMachine.sln
 build:
   verbosity: minimal
 after_build:
