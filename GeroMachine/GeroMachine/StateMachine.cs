@@ -31,6 +31,15 @@ namespace GeroMachine
         }
 
         /// <summary>
+        /// ステートマシンの非同期実行
+        /// </summary>
+        public void RunAsync()
+        {
+            System.Threading.Tasks.Task task = new Task(this.Run);
+            task.Start();
+        }
+
+        /// <summary>
         /// ステートマシンの実行
         /// </summary>
         public void Run()
