@@ -28,12 +28,34 @@ namespace GeroMachineSample
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.RunButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // RunButton
+            // 
+            this.RunButton.Location = new System.Drawing.Point(108, 112);
+            this.RunButton.Name = "RunButton";
+            this.RunButton.Size = new System.Drawing.Size(75, 23);
+            this.RunButton.TabIndex = 0;
+            this.RunButton.Text = "Run";
+            this.RunButton.UseVisualStyleBackColor = true;
+            this.RunButton.Click += new System.EventHandler(this.RunButton_Click);
+            // 
+            // GeroMachineSampleForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.RunButton);
+            this.Name = "GeroMachineSampleForm";
             this.Text = "GeroMachineSampleForm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button RunButton;
     }
 }
 

@@ -16,5 +16,12 @@ namespace GeroMachineSample
         {
             InitializeComponent();
         }
+
+        private void RunButton_Click(object sender, EventArgs e)
+        {
+            RunButton.Enabled = false;
+            GeroMachine.StateMachine state_machine = new GeroMachine.StateMachine();
+            state_machine.RunAsync();
+        }
     }
 }
