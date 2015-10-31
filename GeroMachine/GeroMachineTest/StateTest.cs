@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GeroMachineTest
 {
-    public class Class1
-    {
-    }
+	public class StateTest
+	{
+	}
 }
