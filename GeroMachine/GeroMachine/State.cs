@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GeroMachine
 {
-	class State
+	public class State
 	{
 		/// <summary>
 		/// なにかイベントが発生していたらそのイベントIDを返す.
