@@ -40,6 +40,9 @@ namespace GeroMachine
                 int trigger = States[CurrentStateId].CheckTrigger();
                 int next_state_index = TransitionMatrix[CurrentStateId, trigger];
                 CurrentStateId = next_state_index;
+
+                Console.WriteLine("current state id : {0}", CurrentStateId);
+
                 System.Threading.Thread.Sleep(500);
             }
         }
