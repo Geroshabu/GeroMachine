@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GeroMachineSample
 {
-    public partial class Form1 : Form
+    public partial class GeroMachineSampleForm : Form
     {
-        public Form1()
+        public GeroMachineSampleForm()
         {
             InitializeComponent();
         }

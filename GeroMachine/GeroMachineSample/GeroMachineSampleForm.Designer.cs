@@ -1,6 +1,6 @@
 namespace GeroMachineSample
 {
-    partial class Form1
+    partial class GeroMachineSampleForm
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -30,7 +30,7 @@ namespace GeroMachineSample
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.Text = "GeroMachineSampleForm";
         }
 
         #endregion
