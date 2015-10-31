@@ -17,6 +17,8 @@ build:
   verbosity: minimal
 after_build:
 - cmd: ./pushDoxygen.bat
+test:
+  assemblies: GeroMachineTest.dll
 artifacts:
 - path: GeroMachine\GeroMachineSample\bin\Release\GeroMachineSample.exe
   name: GeroMachineSample
