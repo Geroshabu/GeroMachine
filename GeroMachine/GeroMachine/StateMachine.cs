@@ -12,6 +12,12 @@ namespace GeroMachine
         private State[] States;
         private int[,] TransitionMatrix;
 
+        public delegate void ShowMethod(int currentStateId);
+        /// <summary>
+        /// デバッグのために, 現在のステートを表示するメソッドを持っておく.
+        /// </summary>
+        public ShowMethod CurrentStateShowMethod { get; set; }
+
         public StateMachine()
         {
             States = new State[3]
@@ -50,7 +56,10 @@ namespace GeroMachine
                 int next_state_index = TransitionMatrix[CurrentStateId, trigger];
                 CurrentStateId = next_state_index;
 
-                Console.WriteLine("current state id : {0}", CurrentStateId);
+                if (CurrentStateShowMethod != null)
+                {
+                    CurrentStateShowMethod(CurrentStateId);
+                }
 
                 System.Threading.Thread.Sleep(500);
             }

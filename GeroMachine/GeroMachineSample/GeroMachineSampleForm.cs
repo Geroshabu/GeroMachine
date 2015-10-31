@@ -21,7 +21,16 @@ namespace GeroMachineSample
         {
             RunButton.Enabled = false;
             GeroMachine.StateMachine state_machine = new GeroMachine.StateMachine();
+            state_machine.CurrentStateShowMethod = ShowCurrentState;
             state_machine.RunAsync();
+        }
+
+        /// <summary>
+        /// デバッグ用
+        /// </summary>
+        private void ShowCurrentState(int currentStateId)
+        {
+            CurrentStateIdLabel.Text = currentStateId.ToString();
         }
     }
 }

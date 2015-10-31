@@ -29,6 +29,7 @@ namespace GeroMachineSample
         private void InitializeComponent()
         {
             this.RunButton = new System.Windows.Forms.Button();
+            this.CurrentStateIdLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // RunButton
@@ -41,21 +42,33 @@ namespace GeroMachineSample
             this.RunButton.UseVisualStyleBackColor = true;
             this.RunButton.Click += new System.EventHandler(this.RunButton_Click);
             // 
+            // CurrentStateIdLabel
+            // 
+            this.CurrentStateIdLabel.AutoSize = true;
+            this.CurrentStateIdLabel.Location = new System.Drawing.Point(124, 175);
+            this.CurrentStateIdLabel.Name = "CurrentStateIdLabel";
+            this.CurrentStateIdLabel.Size = new System.Drawing.Size(31, 12);
+            this.CurrentStateIdLabel.TabIndex = 1;
+            this.CurrentStateIdLabel.Text = "None";
+            // 
             // GeroMachineSampleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.CurrentStateIdLabel);
             this.Controls.Add(this.RunButton);
             this.Name = "GeroMachineSampleForm";
             this.Text = "GeroMachineSampleForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button RunButton;
+        private System.Windows.Forms.Label CurrentStateIdLabel;
     }
 }
 
