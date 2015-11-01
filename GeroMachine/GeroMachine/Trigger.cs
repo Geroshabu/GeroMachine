@@ -1,6 +1,6 @@
 namespace GeroMachine
 {
-	class Trigger
+	public class Trigger
 	{
 	}
 }
