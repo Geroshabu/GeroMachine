@@ -12,7 +12,7 @@ namespace GeroMachine
 		/// なにかイベントが発生していたらそのイベントIDを返す.
 		/// </summary>
 		/// <returns>とりあえず0固定</returns>
-		public int CheckTrigger()
+		public virtual int CheckTrigger()
 		{
 			return 0;
 		}
