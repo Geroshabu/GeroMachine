@@ -22,9 +22,9 @@ namespace GeroMachine
 		{
 			States = new State[3]
 			{
-				new State(),
-				new State(),
-				new State()
+				new NormalState(),
+				new NormalState(),
+				new NormalState()
 			};
 			CurrentStateId = 0;
 
