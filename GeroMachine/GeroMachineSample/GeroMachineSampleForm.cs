@@ -19,8 +19,21 @@ namespace GeroMachineSample
 
 		private void RunButton_Click(object sender, EventArgs e)
 		{
+			GeroMachine.State[] states = new GeroMachine.State[3]
+			{
+				new GeroMachine.NormalState(),
+				new GeroMachine.NormalState(),
+				new GeroMachine.NormalState()
+			};
+			int[,] transMatrix = new int[3, 1]
+			{
+				{ 1 },
+				{ 2 },
+				{ 0 }
+			};
+
 			RunButton.Enabled = false;
-			GeroMachine.StateMachine state_machine = new GeroMachine.StateMachine();
+			GeroMachine.StateMachine state_machine = new GeroMachine.StateMachine(states, transMatrix);
 			state_machine.CurrentStateShowMethod = ShowCurrentState;
 			state_machine.RunAsync();
 		}
