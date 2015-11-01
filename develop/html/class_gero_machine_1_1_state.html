@@ -63,6 +63,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -90,18 +91,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_gero_machine_1_1_state-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">GeroMachine.State Class Reference</div>  </div>
+<div class="title">GeroMachine.State Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Inheritance diagram for GeroMachine.State:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_gero_machine_1_1_state.png" usemap="#GeroMachine.State_map" alt=""/>
+  <map id="GeroMachine.State_map" name="GeroMachine.State_map">
+<area href="class_gero_machine_1_1_normal_state.html" alt="GeroMachine.NormalState" shape="rect" coords="0,56,161,80"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa53b114fc34f67873b622cdef00f253d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gero_machine_1_1_state.html#aa53b114fc34f67873b622cdef00f253d">CheckTrigger</a> ()</td></tr>
-<tr class="memdesc:aa53b114fc34f67873b622cdef00f253d"><td class="mdescLeft">&#160;</td><td class="mdescRight">なにかイベントが発生していたらそのイベントIDを返す.  <a href="#aa53b114fc34f67873b622cdef00f253d">More...</a><br /></td></tr>
-<tr class="separator:aa53b114fc34f67873b622cdef00f253d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaf0e81c7b41d73f67b271a92a47fb2a"><td class="memItemLeft" align="right" valign="top">abstract int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gero_machine_1_1_state.html#acaf0e81c7b41d73f67b271a92a47fb2a">CheckTrigger</a> ()</td></tr>
+<tr class="memdesc:acaf0e81c7b41d73f67b271a92a47fb2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">なにかイベントが発生していたらそのイベントIDを返す.  <a href="#acaf0e81c7b41d73f67b271a92a47fb2a">More...</a><br /></td></tr>
+<tr class="separator:acaf0e81c7b41d73f67b271a92a47fb2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa53b114fc34f67873b622cdef00f253d"></a>
+<a class="anchor" id="acaf0e81c7b41d73f67b271a92a47fb2a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -109,7 +119,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int GeroMachine.State.CheckTrigger </td>
+          <td class="memname">abstract int GeroMachine.State.CheckTrigger </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -117,13 +127,15 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>なにかイベントが発生していたらそのイベントIDを返す. </p>
-<dl class="section return"><dt>Returns</dt><dd>とりあえず0固定</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>イベントID</dd></dl>
+
+<p>Implemented in <a class="el" href="class_gero_machine_1_1_normal_state.html#a5544ec5547076b2e543d7d7b684e2454">GeroMachine.NormalState</a>.</p>
 
 </div>
 </div>
@@ -133,7 +145,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Oct 31 2015 17:50:00 for GeroMachine by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 1 2015 07:55:21 for GeroMachine by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
