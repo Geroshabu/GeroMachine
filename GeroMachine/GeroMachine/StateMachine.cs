@@ -18,22 +18,12 @@ namespace GeroMachine
 		/// </summary>
 		public ShowMethod CurrentStateShowMethod { get; set; }
 
-		public StateMachine()
+		public StateMachine(State[] stateList, int[,] transitionMatrix)
 		{
-			States = new State[3]
-			{
-				new NormalState(),
-				new NormalState(),
-				new NormalState()
-			};
+			States = stateList;
 			CurrentStateId = 0;
 
-			TransitionMatrix = new int[3, 1]
-			{
-				{ 1 },
-				{ 2 },
-				{ 0 }
-			};
+			TransitionMatrix = transitionMatrix;
 		}
 
 		/// <summary>
