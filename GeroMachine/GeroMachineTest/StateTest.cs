@@ -2,12 +2,12 @@ using Xunit;
 
 namespace GeroMachineTest
 {
-	public class StateTest
+	public class NormalStateTest
 	{
 		[Fact]
 		public void PassingTest()
 		{
-			GeroMachine.State state = new GeroMachine.State();
+			GeroMachine.NormalState state = new GeroMachine.NormalState();
 			Assert.Equal(0, state.CheckTrigger());
 		}
 	}

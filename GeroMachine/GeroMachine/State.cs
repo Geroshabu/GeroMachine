@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace GeroMachine
 {
-	public class State
+	public abstract class State
 	{
 		/// <summary>
 		/// なにかイベントが発生していたらそのイベントIDを返す.
 		/// </summary>
-		/// <returns>とりあえず0固定</returns>
-		public virtual int CheckTrigger()
-		{
-			return 0;
-		}
+		/// <returns>イベントID</returns>
+		public abstract int CheckTrigger();
 	}
 }
