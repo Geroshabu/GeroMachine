@@ -1,12 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Xunit;
 
 namespace GeroMachineTest
 {
-	class GeroMachineTest
+	public class GeroMachineTest
 	{
+		/// <summary>
+		/// StateMachineを作成する前のテスト
+		/// </summary>
+		public class BeforeCreationTest
+		{
+		}
 	}
 }
