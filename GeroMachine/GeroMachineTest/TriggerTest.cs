@@ -12,54 +12,42 @@ namespace GeroMachineTest
 		/// </summary>
 		public class CreationTest
 		{
-			/// <summary>
-			/// <see cref="Trigger.CountOfTrigger"/>静的フィールドの初期値のテスト
-			/// </summary>
-			[Fact]
-			public void TestCountOfTriggerFieldInitialization()
+			public CreationTest()
 			{
-				// Prepare datas
-				uint expected_CountOfTrigger = 0;
-
-				// Execute
-				// Nothing to do
-
-				// Get result
-				FieldInfo field_info = typeof(Trigger).GetField("CountOfTrigger",
-					BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Static);
-				uint actual_CountOfTrigger = (uint)field_info.GetValue(null);
-
-				// Validate
-				Assert.Equal(expected_CountOfTrigger, actual_CountOfTrigger);
+				Type type = typeof(Trigger);
+				FieldInfo field_info = type.GetField("CountOfTrigger",
+					BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Static);
+				field_info.SetValue(null, 0u);
 			}
 
 			/// <summary>
 			/// コンストラクタのテスト
 			/// </summary>
-			[Theory(Skip = "Not Implemented")]
-			[InlineData(1, 0, 1)]
-			[InlineData(2, 1, 2)]
-			public void TestConstructor(uint creationCount, uint expected_Id, uint expected_CountOfTrigger)
+			[Fact]
+			public void TestConstructor()
 			{
 				// Prepare datas
+				Type type = typeof(Trigger);
 				const bool expected_HasOccured = false;
+				FieldInfo field_info = type.GetField("CountOfTrigger",
+					BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Static);
+				uint expected_CountOfTrigger = (uint)field_info.GetValue(null) + 1;
+				uint expected_Id = (uint)field_info.GetValue(null);
 
 				// Execute
-				Array triggers = Array.CreateInstance(typeof(Trigger), creationCount);
-				for(int i = 0; i < triggers.Length; i++)
-				{
-					triggers.SetValue(new Trigger(), i);
-				}
+				Trigger trigger = new Trigger();
 
 				// Get result
-				Trigger last_element = (Trigger)triggers.GetValue(triggers.Length-1);
-				FieldInfo field_info = last_element.GetType().GetField("<HasOccured>k__BackingField");
-				bool actual_HasOccured = (bool)field_info.GetValue(last_element);
+				field_info = type.GetField("<HasOccured>k__BackingField",
+					BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Instance);
+				bool actual_HasOccured = (bool)field_info.GetValue(trigger);
 
-				field_info = last_element.GetType().GetField("<Id>k__BackingField");
-				uint actual_Id = (uint)field_info.GetValue(last_element);
+				field_info = type.GetField("<Id>k__BackingField",
+					BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Instance);
+				uint actual_Id = (uint)field_info.GetValue(trigger);
 
-				field_info = typeof(Trigger).GetField("CountOfTrigger");
+				field_info = type.GetField("CountOfTrigger",
+					BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Static);
 				uint actual_CountOfTrigger = (uint)field_info.GetValue(null);
 
 				// Validate
