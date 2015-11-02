@@ -28,6 +28,9 @@ namespace GeroMachine
 		/// </summary>
 		public Trigger()
 		{
+			HasOccured = false;
+			Id = CountOfTrigger;
+			CountOfTrigger++;
 		}
 	}
 }
