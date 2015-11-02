@@ -71,7 +71,7 @@ namespace GeroMachineTest
 			/// <summary>
 			/// <see cref="Trigger.HasOccured"/>プロパティのGetterのテスト
 			/// </summary>
-			[Theory(Skip = "Not Implemented")]
+			[Theory]
 			[InlineData(false, false, false)]
 			[InlineData(true, true, false)]
 			public void TestHasOccuredGetter(bool setting_HasOccured, bool expected_HasOccured, bool expected_after_execution)
@@ -96,7 +96,7 @@ namespace GeroMachineTest
 			/// <summary>
 			/// <see cref="Trigger.HasOccured"/>プロパティのSetterのテスト
 			/// </summary>
-			[Theory(Skip = "Not Implemented")]
+			[Theory]
 			[InlineData(true, true)]
 			public void TestHasOccuredSetter(bool input_HasOccured, bool expected_HasOccured)
 			{

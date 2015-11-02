@@ -15,7 +15,16 @@ namespace GeroMachine
 		/// </para>
 		/// </summary>
 		/// <value>トリガが発生していれば<c>true</c>, 発生していなければ<c>false</c></value>
-		public bool HasOccured { get; protected set; }
+		public bool HasOccured
+		{
+			get
+			{
+				bool ans = _HasOccured;
+				_HasOccured = false;
+				return ans;
+			}
+			protected set { _HasOccured = value; }
+		}
 
 		/// <summary>
 		/// このトリガのID
