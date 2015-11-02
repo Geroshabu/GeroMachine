@@ -3,6 +3,11 @@ namespace GeroMachine
 	public class Trigger
 	{
 		/// <summary>
+		/// <see cref="HasOccured"/>プロパティのフィールド
+		/// </summary>
+		private bool _HasOccured;
+
+		/// <summary>
 		/// トリガが発生したかどうかを取得する.
 		/// <para>
 		/// このプロパティによりトリガの発生状況を取得した後は,

@@ -38,7 +38,7 @@ namespace GeroMachineTest
 				Trigger trigger = new Trigger();
 
 				// Get result
-				field_info = type.GetField("<HasOccured>k__BackingField",
+				field_info = type.GetField("_HasOccured",
 					BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Instance);
 				bool actual_HasOccured = (bool)field_info.GetValue(trigger);
 
@@ -78,7 +78,7 @@ namespace GeroMachineTest
 			{
 				// Setup
 				Type type = trigger.GetType();
-				FieldInfo field_info = type.GetField("<HasOccured>k__BackingField",
+				FieldInfo field_info = type.GetField("_HasOccured",
 					BindingFlags.SetField | BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Instance);
 				field_info.SetValue(trigger, setting_HasOccured);
 
@@ -96,7 +96,7 @@ namespace GeroMachineTest
 			/// <summary>
 			/// <see cref="Trigger.HasOccured"/>プロパティのSetterのテスト
 			/// </summary>
-			[Theory]
+			[Theory(Skip = "Not Implemented")]
 			[InlineData(true, true)]
 			public void TestHasOccuredSetter(bool input_HasOccured, bool expected_HasOccured)
 			{
@@ -107,7 +107,7 @@ namespace GeroMachineTest
 				method_info.Invoke(trigger, new object[] { input_HasOccured });
 				
 				// Get result
-				FieldInfo field_info = type.GetField("<HasOccured>k__BackingField",
+				FieldInfo field_info = type.GetField("_HasOccured",
 					BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Instance);
 				bool actual_HasOccured = (bool)field_info.GetValue(trigger);
 
