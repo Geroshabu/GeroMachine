@@ -7,7 +7,11 @@ namespace GeroMachineTest
 		[Fact]
 		public void PassingTest()
 		{
-			GeroMachine.NormalState state = new GeroMachine.NormalState();
+			GeroMachine.Trigger[] triggers = new GeroMachine.Trigger[1]
+			{
+				new GeroMachine.Trigger()
+			};
+			GeroMachine.NormalState state = new GeroMachine.NormalState(triggers);
 			Assert.Equal(0, state.CheckTrigger());
 		}
 	}

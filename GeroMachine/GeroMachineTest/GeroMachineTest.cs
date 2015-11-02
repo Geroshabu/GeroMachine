@@ -19,9 +19,13 @@ namespace GeroMachineTest
 			{
 				// Prepare datas
 				int initial_current_state_id = 0;
+				GeroMachine.Trigger[] triggers = new GeroMachine.Trigger[1]
+				{
+					new GeroMachine.Trigger()
+				};
 				GeroMachine.State[] states = new GeroMachine.State[1]
 				{
-					new GeroMachine.NormalState()
+					new GeroMachine.NormalState(triggers)
 				};
 				int[,] transition_matrix = new int[1, 1]
 				{

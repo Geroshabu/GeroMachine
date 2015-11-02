@@ -8,10 +8,12 @@ namespace GeroMachine
 {
 	public class NormalState : State
 	{
+		public NormalState(Trigger[] triggers) : base(triggers) { }
+
 		/// <summary>
-		/// ‚È‚É‚©ƒCƒxƒ“ƒg‚ª”­¶‚µ‚Ä‚¢‚½‚ç‚»‚ÌƒCƒxƒ“ƒgID‚ğ•Ô‚·.
+		/// ãªã«ã‹ã‚¤ãƒ™ãƒ³ãƒˆãŒç™ºç”Ÿã—ã¦ã„ãŸã‚‰ãã®ã‚¤ãƒ™ãƒ³ãƒˆIDã‚’è¿”ã™.
 		/// </summary>
-		/// <returns>‚Æ‚è‚ ‚¦‚¸0ŒÅ’è</returns>
+		/// <returns>ã¨ã‚Šã‚ãˆãš0å›ºå®š</returns>
 		public override int CheckTrigger()
 		{
 			return 0;
