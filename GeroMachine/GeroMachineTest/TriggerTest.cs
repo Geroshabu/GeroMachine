@@ -14,10 +14,6 @@ namespace GeroMachineTest
 		{
 			public CreationTest()
 			{
-				Type type = typeof(Trigger);
-				FieldInfo field_info = type.GetField("CountOfTrigger",
-					BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Static);
-				field_info.SetValue(null, 0u);
 			}
 
 			/// <summary>
