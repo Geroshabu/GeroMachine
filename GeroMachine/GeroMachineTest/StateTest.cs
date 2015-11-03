@@ -12,7 +12,7 @@ namespace GeroMachineTest
 				new GeroMachine.Trigger()
 			};
 			GeroMachine.NormalState state = new GeroMachine.NormalState(triggers);
-			Assert.Equal(0, state.CheckTrigger());
+			Assert.Equal(1u, state.CheckTrigger());
 		}
 	}
 }

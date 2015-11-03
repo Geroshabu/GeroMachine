@@ -14,9 +14,9 @@ namespace GeroMachine
 		/// なにかイベントが発生していたらそのイベントIDを返す.
 		/// </summary>
 		/// <returns>とりあえず0固定</returns>
-		public override int CheckTrigger()
+		public override uint CheckTrigger()
 		{
-			return 0;
+			return MonitoredTriggers[0].Id;
 		}
 	}
 }

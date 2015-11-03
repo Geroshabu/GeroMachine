@@ -11,7 +11,7 @@ namespace GeroMachine
 		/// <summary>
 		/// このステートで発生するトリガ
 		/// </summary>
-		private Trigger[] MonitoredTriggers;
+		protected Trigger[] MonitoredTriggers;
 
 		public State(Trigger[] triggers)
 		{
@@ -22,6 +22,6 @@ namespace GeroMachine
 		/// なにかイベントが発生していたらそのイベントIDを返す.
 		/// </summary>
 		/// <returns>イベントID</returns>
-		public abstract int CheckTrigger();
+		public abstract uint CheckTrigger();
 	}
 }
