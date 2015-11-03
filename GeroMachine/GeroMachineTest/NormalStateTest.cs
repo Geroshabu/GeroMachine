@@ -76,7 +76,7 @@ namespace GeroMachineTest
 			/// <summary>
 			/// <see cref="NormalState.CheckTrigger"/>メソッドのテスト
 			/// </summary>
-			[Theory(Skip = "Not Implemented")]
+			[Theory]
 			[InlineData(new uint[1] { 0 }, 0u)]
 			[InlineData(new uint[1] { 4 }, 4u)]
 			[InlineData(new uint[1] { 9 }, 9u)]

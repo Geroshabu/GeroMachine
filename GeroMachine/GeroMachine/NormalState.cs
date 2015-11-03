@@ -11,12 +11,19 @@ namespace GeroMachine
 		public NormalState(Trigger[] triggers) : base(triggers) { }
 
 		/// <summary>
-		/// なにかイベントが発生していたらそのイベントIDを返す.
+		/// なにかトリガが発生していたらそのトリガIDを返す.
 		/// </summary>
-		/// <returns>とりあえず0固定</returns>
 		public override uint CheckTrigger()
 		{
-			return MonitoredTriggers[0].Id;
+			foreach(Trigger trigger in MonitoredTriggers)
+			{
+				if (trigger.HasOccured)
+				{
+					return trigger.Id;
+				}
+			}
+
+			return 0;
 		}
 	}
 }
