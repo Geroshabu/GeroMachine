@@ -19,11 +19,16 @@ namespace GeroMachineSample
 
 		private void RunButton_Click(object sender, EventArgs e)
 		{
+			GeroMachine.Trigger[] triggers = new GeroMachine.Trigger[1]
+			{
+				new GeroMachine.Trigger()
+			};
+
 			GeroMachine.State[] states = new GeroMachine.State[3]
 			{
-				new GeroMachine.NormalState(),
-				new GeroMachine.NormalState(),
-				new GeroMachine.NormalState()
+				new GeroMachine.NormalState(triggers),
+				new GeroMachine.NormalState(triggers),
+				new GeroMachine.NormalState(triggers)
 			};
 			int[,] transMatrix = new int[3, 1]
 			{
@@ -35,6 +40,13 @@ namespace GeroMachineSample
 			RunButton.Enabled = false;
 			GeroMachine.StateMachine state_machine = new GeroMachine.StateMachine(states, transMatrix);
 			state_machine.CurrentStateShowMethod = ShowCurrentState;
+
+			System.Reflection.PropertyInfo[] infos = typeof(GeroMachine.Trigger).GetProperties(System.Reflection.BindingFlags.SetProperty | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+			foreach (System.Reflection.PropertyInfo info in infos)
+			{
+				Console.WriteLine(info.Name);
+			}
+
 			state_machine.RunAsync();
 		}
 

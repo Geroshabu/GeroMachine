@@ -57,8 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GeroMachineTest.cs" />
-    <Compile Include="StateTest.cs" />
+    <Compile Include="NormalStateTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TriggerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

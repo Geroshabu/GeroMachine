@@ -8,12 +8,21 @@ namespace GeroMachine
 {
 	public class NormalState : State
 	{
+		public NormalState(Trigger[] triggers) : base(triggers) { }
+
 		/// <summary>
-		/// なにかイベントが発生していたらそのイベントIDを返す.
+		/// 縺ｪ縺ｫ縺九ヨ繝ｪ繧ｬ縺檎匱逕溘＠縺ｦ縺�縺溘ｉ縺昴�ｮ繝医Μ繧ｬID繧定ｿ斐☆.
 		/// </summary>
-		/// <returns>とりあえず0固定</returns>
-		public override int CheckTrigger()
+		public override uint CheckTrigger()
 		{
+			foreach(Trigger trigger in MonitoredTriggers)
+			{
+				if (trigger.HasOccured)
+				{
+					return trigger.Id;
+				}
+			}
+
 			return 0;
 		}
 	}

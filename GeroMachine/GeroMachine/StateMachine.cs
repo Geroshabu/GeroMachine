@@ -42,7 +42,7 @@ namespace GeroMachine
 		{
 			while (true)
 			{
-				int trigger = States[CurrentStateId].CheckTrigger();
+				uint trigger = States[CurrentStateId].CheckTrigger();
 				int next_state_index = TransitionMatrix[CurrentStateId, trigger];
 				CurrentStateId = next_state_index;
 
