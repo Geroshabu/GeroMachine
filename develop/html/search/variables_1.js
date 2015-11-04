@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['states',['States',['../class_gero_machine_1_1_state_machine.html#a69a5a9380aabe6a79222ab13092e52d6',1,'GeroMachine::StateMachine']]]
+  ['countoftrigger',['CountOfTrigger',['../class_gero_machine_1_1_trigger.html#a14af8e3f404ead5424332ceb6c6e0371',1,'GeroMachine::Trigger']]],
+  ['currentstateid',['CurrentStateId',['../class_gero_machine_1_1_state_machine.html#a208b03fcc493f2a7cac522df8563833e',1,'GeroMachine::StateMachine']]]
 ];
