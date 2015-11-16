@@ -25,7 +25,7 @@ namespace GeroMachineTest
 				}
 			}
 
-			[Theory(DisplayName = "コンストラクタの単純な値初期化テスト", Skip = "NotImplemented")]
+			[Theory(DisplayName = "コンストラクタの単純な値初期化テスト")]
 			[MemberData("ConstructorTestData")]
 			public void TestConstructor(State setting_NextState, State expected_NextState,
 				Transition.TransitionMethodDelegate setting_TransitionMethod,
@@ -59,7 +59,7 @@ namespace GeroMachineTest
 				}
 			}
 
-			[Theory(DisplayName = "内部遷移のインスタンス生成テスト", Skip = "NotImplemented")]
+			[Theory(DisplayName = "内部遷移のインスタンス生成テスト")]
 			[MemberData("NullParameterTestData")]
 			public void TestNullParameter(State setting_NextState, Transition.TransitionMethodDelegate setting_TransitionMethod)
 			{
@@ -88,7 +88,7 @@ namespace GeroMachineTest
 				transition = new Transition(setting_NextState, setting_TransitionMethod);
 			}
 
-			[Fact(DisplayName = "Executeメソッドのテスト", Skip = "NotImplemented")]
+			[Fact(DisplayName = "Executeメソッドのテスト")]
 			public void TestExecuteMethod()
 			{
 				// Prepare environment
@@ -117,7 +117,7 @@ namespace GeroMachineTest
 				transition = new Transition(setting_NextState, null);
 			}
 
-			[Fact(DisplayName = "Executeメソッドのテスト", Skip = "NotImplemented")]
+			[Fact(DisplayName = "Executeメソッドのテスト")]
 			public void TestExecuteMethod()
 			{
 				// Prepare datas

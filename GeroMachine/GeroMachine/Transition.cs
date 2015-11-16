@@ -32,7 +32,13 @@ namespace GeroMachine
 		/// <para>実行する処理が無い場合は, nullを指定する.</para></param>
 		public Transition(State nextState, TransitionMethodDelegate transitionMethod)
 		{
-			throw new NotImplementedException();
+			if (nextState == null)
+			{
+				throw new NotImplementedException();
+			}
+
+			NextState = nextState;
+			TransitionMethod = transitionMethod;
 		}
 
 		/// <summary>
@@ -42,7 +48,12 @@ namespace GeroMachine
 		/// <returns>遷移先の状態</returns>
 		public State Execute()
 		{
-			throw new NotImplementedException();
+			if (TransitionMethod != null)
+			{
+				TransitionMethod();
+			}
+
+			return NextState;
 		}
 	}
 }
