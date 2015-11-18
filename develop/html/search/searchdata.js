@@ -1,11 +1,11 @@
 var indexSectionsWithContent =
 {
-  0: "_acghimnrst",
-  1: "nst",
+  0: "_aceghimnrst",
+  1: "inst",
   2: "g",
-  3: "anst",
-  4: "cnrst",
-  5: "_cmst",
+  3: "ainst",
+  4: "cenrst",
+  5: "_cmnst",
   6: "chi"
 };
 
