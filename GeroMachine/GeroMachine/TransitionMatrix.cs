@@ -33,6 +33,8 @@ namespace GeroMachine
 		/// 起こる遷移が無ければ, nullが返る.</returns>
 		/// <exception cref="ArgumentNullException">引数<paramref name="currentState"/>がnull,
 		/// または引数<paramref name="trigger"/>がnull.</exception>
+		/// <exception cref="ArgumentOutOfRangeException">引数<paramref name="currentState"/>が,
+		/// 状態遷移表に存在しない.</exception>
 		public Transition SearchTransition(State currentState, Trigger trigger)
 		{
 			throw new NotImplementedException();
