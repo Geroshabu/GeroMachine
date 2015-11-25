@@ -187,7 +187,7 @@ namespace GeroMachineTest
 				TransitionMatrixInstance = new TransitionMatrix(setting_MatrixData);
 			}
 
-			[Fact(DisplayName = "TransitionMatrix:RegularInstance:SearchTransition:正常ケース", Skip = "NotImplemented")]
+			[Fact(DisplayName = "TransitionMatrix:RegularInstance:SearchTransition:正常ケース")]
 			public void TestSearchTransition()
 			{
 				// Prepare datas
@@ -204,7 +204,7 @@ namespace GeroMachineTest
 				Assert.Same(expected_Result, actual_Result);
 			}
 
-			[Fact(DisplayName = "TransitionMatrix:RegularInstance:SearchTransition:正常ケース(該当する遷移がない場合)", Skip = "NotImplemented")]
+			[Fact(DisplayName = "TransitionMatrix:RegularInstance:SearchTransition:正常ケース(該当する遷移がない場合)")]
 			public void TestSearchTransitionNoTransition()
 			{
 				// Prepare datas
