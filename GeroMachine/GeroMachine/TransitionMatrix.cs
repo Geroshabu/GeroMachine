@@ -42,6 +42,15 @@ namespace GeroMachine
 		/// 状態遷移表に存在しない.</exception>
 		public Transition SearchTransition(State currentState, Trigger trigger)
 		{
+			if (currentState == null)
+			{
+				throw new ArgumentNullException("currentState");
+			}
+			if (trigger == null)
+			{
+				throw new ArgumentNullException("trigger");
+			}
+
 			if (MatrixData[currentState].ContainsKey(trigger))
 			{
 				return MatrixData[currentState][trigger];
