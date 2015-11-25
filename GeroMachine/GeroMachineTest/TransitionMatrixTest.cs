@@ -17,7 +17,7 @@ namespace GeroMachineTest
 			private Trigger[] TriggerSet2;
 			private Trigger[] TriggerSet3;
 
-			[Fact(DisplayName = "TransitionMatrix:Creation:コンストラクタの単純な値初期化テスト", Skip ="NotImplemented")]
+			[Fact(DisplayName = "TransitionMatrix:Creation:コンストラクタの単純な値初期化テスト")]
 			public void TestConstructor()
 			{
 				// Prepare datas
@@ -98,7 +98,7 @@ namespace GeroMachineTest
 				Assert.Equal(expected_MatrixData, actual_MatrixData);
 			}
 
-			[Fact(DisplayName ="TransitionMatrix:Creation:null引数のテスト", Skip = "NotImplemented")]
+			[Fact(DisplayName ="TransitionMatrix:Creation:null引数のテスト")]
 			public void TestNullArgumentConstructor()
 			{
 				// Execute
