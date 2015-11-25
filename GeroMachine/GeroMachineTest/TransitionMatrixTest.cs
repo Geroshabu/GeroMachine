@@ -246,7 +246,7 @@ namespace GeroMachineTest
 					() => TransitionMatrixInstance.SearchTransition(input_State, input_Trigger));
 			}
 
-			[Fact(DisplayName ="TransitionMatrix:RegularInstance:SearchTransition:状態遷移表に存在しない状態が指定されたエラー", Skip = "NotImplemented")]
+			[Fact(DisplayName ="TransitionMatrix:RegularInstance:SearchTransition:状態遷移表に存在しない状態が指定されたエラー")]
 			public void TestSearchTransitionUnregisteredState()
 			{
 				// Prepare datas
