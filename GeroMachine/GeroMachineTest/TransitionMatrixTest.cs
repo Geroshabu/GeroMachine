@@ -17,7 +17,7 @@ namespace GeroMachineTest
 			private Trigger[] TriggerSet2;
 			private Trigger[] TriggerSet3;
 
-			[Fact(DisplayName = "Transition:Creation:コンストラクタの単純な値初期化テスト", Skip ="NotImplemented")]
+			[Fact(DisplayName = "TransitionMatrix:Creation:コンストラクタの単純な値初期化テスト", Skip ="NotImplemented")]
 			public void TestConstructor()
 			{
 				// Prepare datas
