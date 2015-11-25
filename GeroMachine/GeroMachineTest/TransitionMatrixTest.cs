@@ -245,6 +245,24 @@ namespace GeroMachineTest
 					"trigger",
 					() => TransitionMatrixInstance.SearchTransition(input_State, input_Trigger));
 			}
+
+			[Fact(DisplayName ="TransitionMatrix:RegularInstance:SearchTransition:状態遷移表に存在しない状態が指定されたエラー", Skip = "NotImplemented")]
+			public void TestSearchTransitionUnregisteredState()
+			{
+				// Prepare datas
+				Trigger[] TestTriggerSet = new Trigger[2]
+				{
+					All_Triggers[0],
+					All_Triggers[3]
+				};
+				State input_State = new NormalState(TestTriggerSet);
+				Trigger input_Trigger = All_Triggers[0];
+
+				// Execute & Validate
+				Assert.Throws<ArgumentOutOfRangeException>(
+					"currentState",
+					() => TransitionMatrixInstance.SearchTransition(input_State, input_Trigger));
+            }
 		}
 	}
 }
