@@ -20,7 +20,7 @@ namespace GeroMachine
 		/// <exception cref="ArgumentNullException">引数<paramref name="transitionMatrix"/>がnull</exception>
 		public TransitionMatrix(Dictionary<State, Dictionary<Trigger, Transition>> transitionMatrix)
 		{
-			throw new NotImplementedException();
+			MatrixData = transitionMatrix;
 		}
 
 		/// <summary>
