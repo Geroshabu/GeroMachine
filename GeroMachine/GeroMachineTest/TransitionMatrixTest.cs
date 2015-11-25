@@ -220,7 +220,7 @@ namespace GeroMachineTest
 				Assert.Null(actual_Result);
 			}
 
-			[Fact(DisplayName = "TransitionMatrix:RegularInstance:SearchTransition:第一引数がnullエラー", Skip = "NotImplemented")]
+			[Fact(DisplayName = "TransitionMatrix:RegularInstance:SearchTransition:第一引数がnullエラー")]
 			public void TestSearchTransitionNullArgument1()
 			{
 				// Prepare datas
@@ -233,7 +233,7 @@ namespace GeroMachineTest
 					() => TransitionMatrixInstance.SearchTransition(input_State, input_Trigger));
 			}
 
-			[Fact(DisplayName = "TransitionMatrix:RegularInstance:SearchTransition:第二引数がnullエラー", Skip = "NotImplemented")]
+			[Fact(DisplayName = "TransitionMatrix:RegularInstance:SearchTransition:第二引数がnullエラー")]
 			public void TestSearchTransitionNullArgument2()
 			{
 				// Prepare datas
