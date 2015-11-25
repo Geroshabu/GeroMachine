@@ -50,6 +50,10 @@ namespace GeroMachine
 			{
 				throw new ArgumentNullException("trigger");
 			}
+			if (MatrixData.ContainsKey(currentState) == false)
+			{
+				throw new ArgumentOutOfRangeException("currentState");
+			}
 
 			if (MatrixData[currentState].ContainsKey(trigger))
 			{
