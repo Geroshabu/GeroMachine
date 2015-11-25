@@ -104,6 +104,7 @@ namespace GeroMachineTest
 				// Execute
 				TransitionMatrix transition_matrix;
 				Assert.Throws<ArgumentNullException>(
+					"transitionMatrix",
 					() => transition_matrix = new TransitionMatrix(null)
 				);
 			}
@@ -228,6 +229,7 @@ namespace GeroMachineTest
 
 				// Execute & Validate
 				Assert.Throws<ArgumentNullException>(
+					"currentState",
 					() => TransitionMatrixInstance.SearchTransition(input_State, input_Trigger));
 			}
 
@@ -240,6 +242,7 @@ namespace GeroMachineTest
 
 				// Execute & Validate
 				Assert.Throws<ArgumentNullException>(
+					"trigger",
 					() => TransitionMatrixInstance.SearchTransition(input_State, input_Trigger));
 			}
 		}
