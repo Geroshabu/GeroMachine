@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>GeroMachine: GeroMachine.ITrantision Interface Reference</title>
+<title>GeroMachine: GeroMachine.ITransitionMatrix Interface Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,56 +83,79 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespace_gero_machine.html">GeroMachine</a></li><li class="navelem"><a class="el" href="interface_gero_machine_1_1_i_trantision.html">ITrantision</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespace_gero_machine.html">GeroMachine</a></li><li class="navelem"><a class="el" href="interface_gero_machine_1_1_i_transition_matrix.html">ITransitionMatrix</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="interface_gero_machine_1_1_i_trantision-members.html">List of all members</a>  </div>
+<a href="interface_gero_machine_1_1_i_transition_matrix-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">GeroMachine.ITrantision Interface Reference</div>  </div>
+<div class="title">GeroMachine.ITransitionMatrix Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>状態遷移表を管理するためのメソッドを定義する  
+ <a href="interface_gero_machine_1_1_i_transition_matrix.html#details">More...</a></p>
 <div class="dynheader">
-Inheritance diagram for GeroMachine.ITrantision:</div>
+Inheritance diagram for GeroMachine.ITransitionMatrix:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="interface_gero_machine_1_1_i_trantision.png" usemap="#GeroMachine.ITrantision_map" alt=""/>
-  <map id="GeroMachine.ITrantision_map" name="GeroMachine.ITrantision_map">
-<area href="class_gero_machine_1_1_transition.html" title="ある状態への遷移 " alt="GeroMachine.Transition" shape="rect" coords="0,56,151,80"/>
+  <img src="interface_gero_machine_1_1_i_transition_matrix.png" usemap="#GeroMachine.ITransitionMatrix_map" alt=""/>
+  <map id="GeroMachine.ITransitionMatrix_map" name="GeroMachine.ITransitionMatrix_map">
+<area href="class_gero_machine_1_1_transition_matrix.html" title="状態遷移表を管理する機能を提供する " alt="GeroMachine.TransitionMatrix" shape="rect" coords="0,56,186,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a647366faf72c34742ef5abf2f62d86ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_gero_machine_1_1_state.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_gero_machine_1_1_i_trantision.html#a647366faf72c34742ef5abf2f62d86ae">Execute</a> ()</td></tr>
-<tr class="memdesc:a647366faf72c34742ef5abf2f62d86ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">この遷移を実行する.  <a href="#a647366faf72c34742ef5abf2f62d86ae">More...</a><br /></td></tr>
-<tr class="separator:a647366faf72c34742ef5abf2f62d86ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a370dcd8f11adfd0d952ce4df07501253"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_gero_machine_1_1_transition.html">Transition</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_gero_machine_1_1_i_transition_matrix.html#a370dcd8f11adfd0d952ce4df07501253">SearchTransition</a> (<a class="el" href="class_gero_machine_1_1_state.html">State</a> currentState, <a class="el" href="class_gero_machine_1_1_trigger.html">Trigger</a> trigger)</td></tr>
+<tr class="memdesc:a370dcd8f11adfd0d952ce4df07501253"><td class="mdescLeft">&#160;</td><td class="mdescRight">状態が<em>currentState</em> のときにトリガ<em>trigger</em> が発生した場合の, 起こる遷移を取得する.  <a href="#a370dcd8f11adfd0d952ce4df07501253">More...</a><br /></td></tr>
+<tr class="separator:a370dcd8f11adfd0d952ce4df07501253"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a647366faf72c34742ef5abf2f62d86ae"></a>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>状態遷移表を管理するためのメソッドを定義する </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a370dcd8f11adfd0d952ce4df07501253"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_gero_machine_1_1_state.html">State</a> GeroMachine.ITrantision.Execute </td>
+          <td class="memname"><a class="el" href="class_gero_machine_1_1_transition.html">Transition</a> GeroMachine.ITransitionMatrix.SearchTransition </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_gero_machine_1_1_state.html">State</a>&#160;</td>
+          <td class="paramname"><em>currentState</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_gero_machine_1_1_trigger.html">Trigger</a>&#160;</td>
+          <td class="paramname"><em>trigger</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>この遷移を実行する. </p>
-<dl class="section return"><dt>Returns</dt><dd>遷移先の状態</dd></dl>
+<p>状態が<em>currentState</em> のときにトリガ<em>trigger</em> が発生した場合の, 起こる遷移を取得する. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currentState</td><td>現在の状態</td></tr>
+    <tr><td class="paramname">trigger</td><td>発生したトリガ</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><em>currentState</em> で<em>trigger</em> が発生したときに起こる遷移</dd></dl>
 
-<p>Implemented in <a class="el" href="class_gero_machine_1_1_transition.html#a599c0f58ecbe98ac2b09ff5606d36344">GeroMachine.Transition</a>.</p>
+<p>Implemented in <a class="el" href="class_gero_machine_1_1_transition_matrix.html#a575285ae6689dbd3f1042a74a0873e73">GeroMachine.TransitionMatrix</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>C:/projects/GeroMachine/GeroMachine/GeroMachine/<a class="el" href="_i_trantision_8cs.html">ITrantision.cs</a></li>
+<li>C:/projects/GeroMachine/GeroMachine/GeroMachine/<a class="el" href="_i_transition_matrix_8cs.html">ITransitionMatrix.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
