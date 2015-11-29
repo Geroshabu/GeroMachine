@@ -1,6 +1,6 @@
 namespace GeroMachine
 {
-	interface ITransition
+	public interface ITransition
 	{
 		/// <summary>
 		/// この遷移を実行する.
