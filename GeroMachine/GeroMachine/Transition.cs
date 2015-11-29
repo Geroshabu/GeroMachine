@@ -5,7 +5,7 @@ namespace GeroMachine
 	/// <summary>
 	/// ある状態への遷移
 	/// </summary>
-	public class Transition : ITrantision
+	public class Transition : ITransition
 	{
 		/// <summary>
 		/// 遷移時に実行される処理のデリゲート
