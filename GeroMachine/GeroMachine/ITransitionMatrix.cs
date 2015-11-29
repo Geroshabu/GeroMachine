@@ -12,6 +12,6 @@ namespace GeroMachine
 		/// <param name="currentState">現在の状態</param>
 		/// <param name="trigger">発生したトリガ</param>
 		/// <returns><paramref name="currentState"/>で<paramref name="trigger"/>が発生したときに起こる遷移</returns>
-		Transition SearchTransition(State currentState, Trigger trigger);
+		ITransition SearchTransition(State currentState, Trigger trigger);
 	}
 }

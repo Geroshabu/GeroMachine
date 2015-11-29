@@ -198,7 +198,7 @@ namespace GeroMachineTest
 				Transition expected_Result = setting_MatrixData[input_CurrentState][input_Trigger];
 
 				// Execute
-				Transition actual_Result = TransitionMatrixInstance.SearchTransition(input_CurrentState, input_Trigger);
+				ITransition actual_Result = TransitionMatrixInstance.SearchTransition(input_CurrentState, input_Trigger);
 
 				// Validate
 				Assert.Same(expected_Result, actual_Result);
@@ -214,7 +214,7 @@ namespace GeroMachineTest
 				Trigger input_Trigger = All_Triggers[index_Trigger];
 
 				// Execute
-				Transition actual_Result = TransitionMatrixInstance.SearchTransition(input_CurrentState, input_Trigger);
+				ITransition actual_Result = TransitionMatrixInstance.SearchTransition(input_CurrentState, input_Trigger);
 
 				// Validate
 				Assert.Null(actual_Result);

@@ -40,7 +40,7 @@ namespace GeroMachine
 		/// または引数<paramref name="trigger"/>がnull.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">引数<paramref name="currentState"/>が,
 		/// 状態遷移表に存在しない.</exception>
-		public Transition SearchTransition(State currentState, Trigger trigger)
+		public ITransition SearchTransition(State currentState, Trigger trigger)
 		{
 			if (currentState == null)
 			{
