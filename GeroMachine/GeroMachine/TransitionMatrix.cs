@@ -11,14 +11,14 @@ namespace GeroMachine
 		/// <summary>
 		/// 遷移表の本体
 		/// </summary>
-		private Dictionary<State, Dictionary<Trigger, Transition>> MatrixData;
+		private Dictionary<State, Dictionary<Trigger, ITransition>> MatrixData;
 
 		/// <summary>
 		/// <see cref="TransitionMatrix"/>クラスの新しいインスタンスを初期化する.
 		/// </summary>
 		/// <param name="matrix">遷移表のもとになる2次元ハッシュテーブル</param>
 		/// <exception cref="ArgumentNullException">引数<paramref name="transitionMatrix"/>がnull</exception>
-		public TransitionMatrix(Dictionary<State, Dictionary<Trigger, Transition>> transitionMatrix)
+		public TransitionMatrix(Dictionary<State, Dictionary<Trigger, ITransition>> transitionMatrix)
 		{
 			if (transitionMatrix == null)
 			{
@@ -40,7 +40,7 @@ namespace GeroMachine
 		/// または引数<paramref name="trigger"/>がnull.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">引数<paramref name="currentState"/>が,
 		/// 状態遷移表に存在しない.</exception>
-		public Transition SearchTransition(State currentState, Trigger trigger)
+		public ITransition SearchTransition(State currentState, Trigger trigger)
 		{
 			if (currentState == null)
 			{

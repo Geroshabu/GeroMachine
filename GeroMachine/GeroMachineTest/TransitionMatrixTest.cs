@@ -53,11 +53,11 @@ namespace GeroMachineTest
 					new NormalState(TriggerSet2),
 					new NormalState(TriggerSet3)
 				};
-				var input_transitionMatrix = new Dictionary<State, Dictionary<Trigger, Transition>>()
+				var input_transitionMatrix = new Dictionary<State, Dictionary<Trigger, ITransition>>()
 				{
 					{
 						states[0],
-						new Dictionary<Trigger, Transition>()
+						new Dictionary<Trigger, ITransition>()
 						{
 							{ TriggerSet1[0], new Transition(states[2], null) },
 							{ TriggerSet1[1], new Transition(states[2], null) },
@@ -66,7 +66,7 @@ namespace GeroMachineTest
 					},
 					{
 						states[1],
-						new Dictionary<Trigger, Transition>()
+						new Dictionary<Trigger, ITransition>()
 						{
 							{ TriggerSet2[0], new Transition(states[0], null) },
 							{ TriggerSet2[1], new Transition(states[1], null) },
@@ -75,7 +75,7 @@ namespace GeroMachineTest
 					},
 					{
 						states[2],
-						new Dictionary<Trigger, Transition>()
+						new Dictionary<Trigger, ITransition>()
 						{
 							{ TriggerSet3[0], new Transition(states[2], null) },
 							{ TriggerSet3[1], new Transition(states[2], null) },
@@ -83,7 +83,7 @@ namespace GeroMachineTest
 						}
 					}
 				};
-				var expected_MatrixData = new Dictionary<State, Dictionary<Trigger, Transition>>(input_transitionMatrix);
+				var expected_MatrixData = new Dictionary<State, Dictionary<Trigger, ITransition>>(input_transitionMatrix);
 
 				// Execute
 				TransitionMatrix transition_matrix = new TransitionMatrix(input_transitionMatrix);
@@ -91,7 +91,7 @@ namespace GeroMachineTest
 				// Get result
 				FieldInfo field_info = transition_matrix.GetType().GetField("MatrixData",
 					BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Instance);
-				var actual_MatrixData = (Dictionary<State, Dictionary<Trigger, Transition>>)field_info.GetValue(transition_matrix);
+				var actual_MatrixData = (Dictionary<State, Dictionary<Trigger, ITransition>>)field_info.GetValue(transition_matrix);
 
 				// Validate
 				Assert.Same(input_transitionMatrix, actual_MatrixData);
@@ -117,7 +117,7 @@ namespace GeroMachineTest
 		{
 			private Trigger[] All_Triggers;
 			private State[] All_States;
-			private Dictionary<State, Dictionary<Trigger, Transition>> setting_MatrixData;
+			private Dictionary<State, Dictionary<Trigger, ITransition>> setting_MatrixData;
 			private TransitionMatrix TransitionMatrixInstance;
 
 			public RegularInstanceTest()
@@ -154,11 +154,11 @@ namespace GeroMachineTest
 					new NormalState(TriggerSet2),
 					new NormalState(TriggerSet3)
 				};
-				setting_MatrixData = new Dictionary<State, Dictionary<Trigger, Transition>>()
+				setting_MatrixData = new Dictionary<State, Dictionary<Trigger, ITransition>>()
 				{
 					{
 						All_States[0],
-						new Dictionary<Trigger, Transition>()
+						new Dictionary<Trigger, ITransition>()
 						{
 							{ TriggerSet1[0], new Transition(All_States[2], null) },
 							{ TriggerSet1[1], new Transition(All_States[2], null) },
@@ -167,7 +167,7 @@ namespace GeroMachineTest
 					},
 					{
 						All_States[1],
-						new Dictionary<Trigger, Transition>()
+						new Dictionary<Trigger, ITransition>()
 						{
 							{ TriggerSet2[0], new Transition(All_States[0], null) },
 							{ TriggerSet2[1], new Transition(All_States[1], null) },
@@ -176,7 +176,7 @@ namespace GeroMachineTest
 					},
 					{
 						All_States[2],
-						new Dictionary<Trigger, Transition>()
+						new Dictionary<Trigger, ITransition>()
 						{
 							{ TriggerSet3[0], new Transition(All_States[2], null) },
 							{ TriggerSet3[1], new Transition(All_States[2], null) },
@@ -195,10 +195,10 @@ namespace GeroMachineTest
 				int index_Trigger = 1;
 				State input_CurrentState = All_States[index_CurrentState];
 				Trigger input_Trigger = All_Triggers[index_Trigger];
-				Transition expected_Result = setting_MatrixData[input_CurrentState][input_Trigger];
+				ITransition expected_Result = setting_MatrixData[input_CurrentState][input_Trigger];
 
 				// Execute
-				Transition actual_Result = TransitionMatrixInstance.SearchTransition(input_CurrentState, input_Trigger);
+				ITransition actual_Result = TransitionMatrixInstance.SearchTransition(input_CurrentState, input_Trigger);
 
 				// Validate
 				Assert.Same(expected_Result, actual_Result);
@@ -214,7 +214,7 @@ namespace GeroMachineTest
 				Trigger input_Trigger = All_Triggers[index_Trigger];
 
 				// Execute
-				Transition actual_Result = TransitionMatrixInstance.SearchTransition(input_CurrentState, input_Trigger);
+				ITransition actual_Result = TransitionMatrixInstance.SearchTransition(input_CurrentState, input_Trigger);
 
 				// Validate
 				Assert.Null(actual_Result);
