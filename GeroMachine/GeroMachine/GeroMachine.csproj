@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ITransitionMatrix.cs" />
-    <Compile Include="ITrantision.cs" />
+    <Compile Include="ITransition.cs" />
     <Compile Include="NormalState.cs" />
     <Compile Include="State.cs" />
     <Compile Include="StateMachine.cs" />
