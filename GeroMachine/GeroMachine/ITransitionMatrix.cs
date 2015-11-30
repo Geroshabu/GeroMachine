@@ -3,7 +3,7 @@ namespace GeroMachine
 	/// <summary>
 	/// 状態遷移表を管理するためのメソッドを定義する
 	/// </summary>
-	interface ITransitionMatrix
+	public interface ITransitionMatrix
 	{
 		/// <summary>
 		/// 状態が<paramref name="currentState"/>のときにトリガ<paramref name="trigger"/>が発生した場合の,
