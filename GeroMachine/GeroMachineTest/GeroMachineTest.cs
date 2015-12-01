@@ -132,7 +132,7 @@ namespace GeroMachineTest
 				Assert.Equal(transition_matrix, result_transition_matrix);
 			}
 
-			[Fact(DisplayName = "StateMachine:Creation:Constructor:コンストラクタの単純な値初期化テスト", Skip = "NotImplemented")]
+			[Fact(DisplayName = "StateMachine:Creation:Constructor:コンストラクタの単純な値初期化テスト")]
 			public void TestConstructor()
 			{
 				// Prepare datas

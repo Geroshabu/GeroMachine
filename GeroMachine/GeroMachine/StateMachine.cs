@@ -31,7 +31,8 @@ namespace GeroMachine
 		/// または引数<paramref name="matrixData"/>がnull.</exception>
 		public StateMachine(State initialState, ITransitionMatrix matrixData)
 		{
-			throw new NotImplementedException();
+			CurrentState = initialState;
+			TransitionMatrixData = matrixData;
 		}
 
 		public StateMachine(State[] stateList, int[,] transitionMatrix)
