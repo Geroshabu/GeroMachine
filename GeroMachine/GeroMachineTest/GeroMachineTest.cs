@@ -319,7 +319,7 @@ namespace GeroMachineTest
 					() => StateMachineInstance.InputTrigger(setting_Trigger));
 			}
 
-			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:SearchTransitionにnullが渡される内部エラー", Skip = "NotImplemented")]
+			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:SearchTransitionにnullが渡される内部エラー")]
 			public void TestSearchTransitionFailedSearchTransitionArgumentNull()
 			{
 				// Prepare datas
