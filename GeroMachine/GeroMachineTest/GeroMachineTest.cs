@@ -274,7 +274,7 @@ namespace GeroMachineTest
 				StateMachineInstance = new StateMachine(setting_InitialState, setting_TransitionMatrix);
 			}
 
-			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:通常の使用", Skip = "NotImplemented")]
+			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:通常の使用")]
 			public void TestInputTrigger()
 			{
 				// Prepare datas
