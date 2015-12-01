@@ -35,6 +35,10 @@ namespace GeroMachine
 			{
 				throw new ArgumentNullException("initialState");
 			}
+			if (matrixData == null)
+			{
+				throw new ArgumentNullException("matrixData");
+			}
 
 			CurrentState = initialState;
 			TransitionMatrixData = matrixData;

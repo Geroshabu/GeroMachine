@@ -168,7 +168,7 @@ namespace GeroMachineTest
 					() => state_machine = new StateMachine(setting_InitialState, setting_TransitionMatrixData));
 			}
 
-			[Fact(DisplayName = "StateMachine:Creation:Constructor:第二引数がnullエラー", Skip = "NotImplemented")]
+			[Fact(DisplayName = "StateMachine:Creation:Constructor:第二引数がnullエラー")]
 			public void TestConstructorNullArgument2()
 			{
 				// Prepare datas
