@@ -155,7 +155,7 @@ namespace GeroMachineTest
 				Assert.Same(expected_TransitionMatrixData, actual_TransitionMatrixData);
 			}
 
-			[Fact(DisplayName = "StateMachine:Creation:Constructor:第一引数がnullエラー", Skip = "NotImplemented")]
+			[Fact(DisplayName = "StateMachine:Creation:Constructor:第一引数がnullエラー")]
 			public void TestConstructorNullArgument1()
 			{
 				// Prepare datas
