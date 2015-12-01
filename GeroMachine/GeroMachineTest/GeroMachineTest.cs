@@ -307,7 +307,7 @@ namespace GeroMachineTest
 				Assert.Same(expected_CurrentState, actual_CurrentState);
 			}
 
-			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:第一引数がnullエラー", Skip = "NotImplemented")]
+			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:第一引数がnullエラー")]
 			public void TestInputTriggerNullArgument()
 			{
 				// Prepare datas

@@ -96,6 +96,11 @@ namespace GeroMachine
 		/// 状態遷移表の設定ミスなどによる.</exception>
 		public void InputTrigger(Trigger trigger)
 		{
+			if (trigger == null)
+			{
+				throw new ArgumentNullException("trigger");
+			}
+
 			ITransition transition = TransitionMatrixData.SearchTransition(CurrentState, trigger);
 			if (transition != null)
 			{
