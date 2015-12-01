@@ -101,6 +101,8 @@ namespace GeroMachine
 				throw new ArgumentNullException("trigger");
 			}
 
+			System.Diagnostics.Debug.Assert(CurrentState != null);
+
 			ITransition transition = TransitionMatrixData.SearchTransition(CurrentState, trigger);
 			if (transition != null)
 			{
