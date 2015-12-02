@@ -93,6 +93,7 @@ namespace GeroMachineSample
 			this.Controls.Add(this.RunButton);
 			this.Name = "GeroMachineSampleForm";
 			this.Text = "GeroMachineSampleForm";
+			this.Load += new System.EventHandler(this.GeroMachineSampleForm_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
