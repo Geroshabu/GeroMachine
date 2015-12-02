@@ -339,7 +339,7 @@ namespace GeroMachineTest
 					() => StateMachineInstance.InputTrigger(input_Trigger));
 			}
 
-			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:状態遷移図に現在の状態が無い内部エラー", Skip = "NotImplemented")]
+			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:状態遷移図に現在の状態が無い内部エラー")]
 			public void TestSearchTransitionFailedSearchTransitionArgumentOutOfRange()
 			{
 				// Prepare datas

@@ -103,7 +103,16 @@ namespace GeroMachine
 
 			System.Diagnostics.Debug.Assert(CurrentState != null);
 
-			ITransition transition = TransitionMatrixData.SearchTransition(CurrentState, trigger);
+			ITransition transition;
+			try
+			{
+				transition = TransitionMatrixData.SearchTransition(CurrentState, trigger);
+			}
+			catch (ArgumentOutOfRangeException e)
+			{
+				throw new InvalidOperationException("現在の状態は, 状態遷移表に登録されていません.", e);
+			}
+
 			if (transition != null)
 			{
 				CurrentState = transition.Execute();
