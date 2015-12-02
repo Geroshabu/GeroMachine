@@ -62,6 +62,7 @@ namespace GeroMachineSample
 			this.Trigger1Button.TabIndex = 2;
 			this.Trigger1Button.Text = "Trigger1";
 			this.Trigger1Button.UseVisualStyleBackColor = true;
+			this.Trigger1Button.Click += new System.EventHandler(this.Trigger1Button_Click);
 			// 
 			// Trigger2Button
 			// 
@@ -71,6 +72,7 @@ namespace GeroMachineSample
 			this.Trigger2Button.TabIndex = 3;
 			this.Trigger2Button.Text = "Trigger2";
 			this.Trigger2Button.UseVisualStyleBackColor = true;
+			this.Trigger2Button.Click += new System.EventHandler(this.Trigger2Button_Click);
 			// 
 			// Trigger3Button
 			// 
@@ -80,6 +82,7 @@ namespace GeroMachineSample
 			this.Trigger3Button.TabIndex = 4;
 			this.Trigger3Button.Text = "Trigger3";
 			this.Trigger3Button.UseVisualStyleBackColor = true;
+			this.Trigger3Button.Click += new System.EventHandler(this.Trigger3Button_Click);
 			// 
 			// GeroMachineSampleForm
 			// 

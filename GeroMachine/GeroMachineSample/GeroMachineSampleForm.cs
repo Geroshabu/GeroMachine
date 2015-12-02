@@ -110,5 +110,20 @@ namespace GeroMachineSample
 
 			MainStateMachine = new StateMachine(all_states[0], transitino_matrix);
 		}
+
+		private void Trigger1Button_Click(object sender, EventArgs e)
+		{
+			MainStateMachine.InputTrigger(AllTriggers[0]);
+		}
+
+		private void Trigger2Button_Click(object sender, EventArgs e)
+		{
+			MainStateMachine.InputTrigger(AllTriggers[1]);
+		}
+
+		private void Trigger3Button_Click(object sender, EventArgs e)
+		{
+			MainStateMachine.InputTrigger(AllTriggers[2]);
+		}
 	}
 }
