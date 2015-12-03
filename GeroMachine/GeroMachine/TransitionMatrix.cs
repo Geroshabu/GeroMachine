@@ -16,7 +16,7 @@ namespace GeroMachine
 		/// <summary>
 		/// <see cref="TransitionMatrix"/>クラスの新しいインスタンスを初期化する.
 		/// </summary>
-		/// <param name="matrix">遷移表のもとになる2次元ハッシュテーブル</param>
+		/// <param name="transitionMatrix">遷移表のもとになる2次元ハッシュテーブル</param>
 		/// <exception cref="ArgumentNullException">引数<paramref name="transitionMatrix"/>がnull</exception>
 		public TransitionMatrix(Dictionary<State, Dictionary<Trigger, ITransition>> transitionMatrix)
 		{
