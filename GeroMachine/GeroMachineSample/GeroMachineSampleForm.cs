@@ -77,6 +77,9 @@ namespace GeroMachineSample
 				new NormalState(AllTriggers),
 				new NormalState(AllTriggers)
 			};
+			all_states[0].StateName = "State 1";
+			all_states[1].StateName = "State 2";
+			all_states[2].StateName = "State 3";
 			var matrixData = new Dictionary<State, Dictionary<Trigger, ITransition>>
 			{
 				{
@@ -109,21 +112,25 @@ namespace GeroMachineSample
 			TransitionMatrix transitino_matrix = new TransitionMatrix(matrixData);
 
 			MainStateMachine = new StateMachine(all_states[0], transitino_matrix);
+			CurrentStateNameLabel.Text = MainStateMachine.CurrentStateName;
 		}
 
 		private void Trigger1Button_Click(object sender, EventArgs e)
 		{
 			MainStateMachine.InputTrigger(AllTriggers[0]);
+			CurrentStateNameLabel.Text = MainStateMachine.CurrentStateName;
 		}
 
 		private void Trigger2Button_Click(object sender, EventArgs e)
 		{
 			MainStateMachine.InputTrigger(AllTriggers[1]);
+			CurrentStateNameLabel.Text = MainStateMachine.CurrentStateName;
 		}
 
 		private void Trigger3Button_Click(object sender, EventArgs e)
 		{
 			MainStateMachine.InputTrigger(AllTriggers[2]);
+			CurrentStateNameLabel.Text = MainStateMachine.CurrentStateName;
 		}
 	}
 }
