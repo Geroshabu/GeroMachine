@@ -118,5 +118,16 @@ namespace GeroMachine
 				CurrentState = transition.Execute();
 			}
 		}
+
+		/// <summary>
+		/// 現在の状態が何なのかを識別するための名前 (デバッグ用)
+		/// </summary>
+		public string CurrentStateName
+		{
+			get
+			{
+				return CurrentState.StateName;
+			}
+		}
 	}
 }
