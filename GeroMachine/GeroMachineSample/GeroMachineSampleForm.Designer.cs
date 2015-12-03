@@ -28,33 +28,12 @@ namespace GeroMachineSample
         /// </summary>
         private void InitializeComponent()
         {
-			this.RunButton = new System.Windows.Forms.Button();
-			this.CurrentStateIdLabel = new System.Windows.Forms.Label();
 			this.Trigger1Button = new System.Windows.Forms.Button();
 			this.Trigger2Button = new System.Windows.Forms.Button();
 			this.Trigger3Button = new System.Windows.Forms.Button();
 			this.CurrentStateNameTitleLabel = new System.Windows.Forms.Label();
 			this.CurrentStateNameLabel = new System.Windows.Forms.Label();
 			this.SuspendLayout();
-			// 
-			// RunButton
-			// 
-			this.RunButton.Location = new System.Drawing.Point(93, 137);
-			this.RunButton.Name = "RunButton";
-			this.RunButton.Size = new System.Drawing.Size(75, 23);
-			this.RunButton.TabIndex = 0;
-			this.RunButton.Text = "Run";
-			this.RunButton.UseVisualStyleBackColor = true;
-			this.RunButton.Click += new System.EventHandler(this.RunButton_Click);
-			// 
-			// CurrentStateIdLabel
-			// 
-			this.CurrentStateIdLabel.AutoSize = true;
-			this.CurrentStateIdLabel.Location = new System.Drawing.Point(116, 179);
-			this.CurrentStateIdLabel.Name = "CurrentStateIdLabel";
-			this.CurrentStateIdLabel.Size = new System.Drawing.Size(31, 12);
-			this.CurrentStateIdLabel.TabIndex = 1;
-			this.CurrentStateIdLabel.Text = "None";
 			// 
 			// Trigger1Button
 			// 
@@ -113,8 +92,6 @@ namespace GeroMachineSample
 			this.Controls.Add(this.Trigger3Button);
 			this.Controls.Add(this.Trigger2Button);
 			this.Controls.Add(this.Trigger1Button);
-			this.Controls.Add(this.CurrentStateIdLabel);
-			this.Controls.Add(this.RunButton);
 			this.Name = "GeroMachineSampleForm";
 			this.Text = "GeroMachineSampleForm";
 			this.Load += new System.EventHandler(this.GeroMachineSampleForm_Load);
@@ -124,9 +101,6 @@ namespace GeroMachineSample
         }
 
         #endregion
-
-        private System.Windows.Forms.Button RunButton;
-        private System.Windows.Forms.Label CurrentStateIdLabel;
 		private System.Windows.Forms.Button Trigger1Button;
 		private System.Windows.Forms.Button Trigger2Button;
 		private System.Windows.Forms.Button Trigger3Button;

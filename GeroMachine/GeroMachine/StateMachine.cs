@@ -8,18 +8,8 @@ namespace GeroMachine
 {
 	public class StateMachine
 	{
-		private int CurrentStateId;
-		private State[] States;
-		private int[,] TransitionMatrix;
-
 		private State CurrentState;
 		private ITransitionMatrix TransitionMatrixData;
-
-		public delegate void ShowMethod(int currentStateId);
-		/// <summary>
-		/// デバッグのために, 現在のステートを表示するメソッドを持っておく.
-		/// </summary>
-		public ShowMethod CurrentStateShowMethod { get; set; }
 
 		/// <summary>
 		/// 初期状態と状態遷移表を指定し,
@@ -42,43 +32,6 @@ namespace GeroMachine
 
 			CurrentState = initialState;
 			TransitionMatrixData = matrixData;
-		}
-
-		public StateMachine(State[] stateList, int[,] transitionMatrix)
-		{
-			States = stateList;
-			CurrentStateId = 0;
-
-			TransitionMatrix = transitionMatrix;
-		}
-
-		/// <summary>
-		/// ステートマシンの非同期実行
-		/// </summary>
-		public void RunAsync()
-		{
-			System.Threading.Tasks.Task task = new Task(this.Run);
-			task.Start();
-		}
-
-		/// <summary>
-		/// ステートマシンの実行
-		/// </summary>
-		public void Run()
-		{
-			while (true)
-			{
-				uint trigger = States[CurrentStateId].CheckTrigger();
-				int next_state_index = TransitionMatrix[CurrentStateId, trigger];
-				CurrentStateId = next_state_index;
-
-				if (CurrentStateShowMethod != null)
-				{
-					CurrentStateShowMethod(CurrentStateId);
-				}
-
-				System.Threading.Thread.Sleep(500);
-			}
 		}
 
 		/// <summary>

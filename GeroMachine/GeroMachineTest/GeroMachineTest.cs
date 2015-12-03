@@ -85,53 +85,6 @@ namespace GeroMachineTest
 				setting_InitialState = all_states[0];
 			}
 
-			/// <summary>
-			/// 1個のステート, 1個のトリガだけの遷移表で
-			/// ステートマシンを作成する.
-			/// </summary>
-			[Fact]
-			public void CreateSimpleStateMachine()
-			{
-				// Prepare datas
-				int initial_current_state_id = 0;
-				GeroMachine.Trigger[] triggers = new GeroMachine.Trigger[1]
-				{
-					new GeroMachine.Trigger()
-				};
-				GeroMachine.State[] states = new GeroMachine.State[1]
-				{
-					new GeroMachine.NormalState(triggers)
-				};
-				int[,] transition_matrix = new int[1, 1]
-				{
-					{0 }
-				};
-
-				// Execute
-				var state_machine = new GeroMachine.StateMachine(states, transition_matrix);
-
-				// Get result value
-				FieldInfo field_info;
-				GeroMachine.State[] result_states;
-				int[,] result_transition_matrix;
-				int result_current_state_id;
-
-				field_info = state_machine.GetType().GetField("States",
-					BindingFlags.GetField | BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Instance);
-				result_states = (GeroMachine.State[])field_info.GetValue(state_machine);
-				field_info = state_machine.GetType().GetField("TransitionMatrix",
-					BindingFlags.GetField | BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Instance);
-				result_transition_matrix = (int[,])field_info.GetValue(state_machine);
-				field_info = state_machine.GetType().GetField("CurrentStateId",
-					BindingFlags.GetField | BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Instance);
-				result_current_state_id = (int)field_info.GetValue(state_machine);
-
-				// Validate
-				Assert.Equal(initial_current_state_id, result_current_state_id);
-				Assert.Equal(states, result_states);
-				Assert.Equal(transition_matrix, result_transition_matrix);
-			}
-
 			[Fact(DisplayName = "StateMachine:Creation:Constructor:コンストラクタの単純な値初期化テスト")]
 			public void TestConstructor()
 			{
