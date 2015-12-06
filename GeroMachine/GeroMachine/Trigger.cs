@@ -11,10 +11,10 @@ namespace GeroMachine
 		/// トリガが発生したかどうかを取得する.
 		/// <para>
 		/// このプロパティによりトリガの発生状況を取得した後は,
-		/// このプロパティ値は<c>false</c>になる.
+		/// このプロパティ値はfalseになる.
 		/// </para>
 		/// </summary>
-		/// <value>トリガが発生していれば<c>true</c>, 発生していなければ<c>false</c></value>
+		/// <value>トリガが発生していればtrue, 発生していなければfalse</value>
 		public bool HasOccured
 		{
 			get
