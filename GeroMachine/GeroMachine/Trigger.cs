@@ -33,7 +33,7 @@ namespace GeroMachine
 		public uint Id { get; protected set; }
 
 		/// <summary>
-		/// <seealso cref="Id"/>を採番するための値.
+		/// <see cref="Id"/>を採番するための値.
 		/// </summary>
 		private static uint CountOfTrigger = 0;
 
