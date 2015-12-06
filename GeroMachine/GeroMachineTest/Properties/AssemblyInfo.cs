@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
-[assembly: AssemblyTitle("GeroMachine")]
+[assembly: AssemblyTitle("GeroMachineTest")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("GeroMachine")]
-[assembly: AssemblyCopyright("Copyright ©  2015 Geroshabu")]
+[assembly: AssemblyProduct("GeroMachineTest")]
+[assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // このプロジェクトが COM に公開される場合、次の GUID が typelib の ID になります
-[assembly: Guid("b83b2bc3-d685-415b-ae64-5944a4a451b3")]
+[assembly: Guid("caa0a8fd-980d-494d-8e0c-9e70a6b936ad")]
 
 // アセンブリのバージョン情報は次の 4 つの値で構成されています:
 //
