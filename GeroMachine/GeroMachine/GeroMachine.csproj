@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EndState.cs" />
     <Compile Include="ITransitionMatrix.cs" />
     <Compile Include="ITransition.cs" />
     <Compile Include="NormalState.cs" />
