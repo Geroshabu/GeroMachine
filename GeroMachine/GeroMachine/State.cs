@@ -13,20 +13,8 @@ namespace GeroMachine
 		/// </summary>
 		public string StateName { get; set; }
 
-		/// <summary>
-		/// このステートで発生するトリガ
-		/// </summary>
-		protected Trigger[] MonitoredTriggers;
-
-		public State(Trigger[] triggers)
+		public State()
 		{
-			MonitoredTriggers = triggers;
 		}
-
-		/// <summary>
-		/// なにかイベントが発生していたらそのイベントIDを返す.
-		/// </summary>
-		/// <returns>イベントID</returns>
-		public abstract uint CheckTrigger();
 	}
 }

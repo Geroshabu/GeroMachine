@@ -32,9 +32,9 @@ namespace GeroMachineSample
 			};
 			State[] all_states = new State[3]
 			{
-				new NormalState(AllTriggers),
-				new NormalState(AllTriggers),
-				new NormalState(AllTriggers)
+				new NormalState(),
+				new NormalState(),
+				new NormalState()
 			};
 			all_states[0].StateName = "State 1";
 			all_states[1].StateName = "State 2";
