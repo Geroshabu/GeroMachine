@@ -22,11 +22,5 @@ namespace GeroMachine
 		{
 			MonitoredTriggers = triggers;
 		}
-
-		/// <summary>
-		/// なにかイベントが発生していたらそのイベントIDを返す.
-		/// </summary>
-		/// <returns>イベントID</returns>
-		public abstract uint CheckTrigger();
 	}
 }

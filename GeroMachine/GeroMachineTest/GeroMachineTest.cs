@@ -211,10 +211,6 @@ namespace GeroMachineTest
 			private class StateStub : State
 			{
 				public StateStub() : base(null) { }
-				public override uint CheckTrigger()
-				{
-					throw new NotImplementedException();
-				}
 			}
 
 			private class TriggerStub : Trigger { }
