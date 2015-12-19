@@ -14,7 +14,7 @@ namespace GeroMachineTest
 			/// <summary>
 			/// コンストラクタのテスト
 			/// </summary>
-			[Fact]
+			[Fact(Skip = "Under Construction")]
 			public void TestConstructor()
 			{
 				// Prepare datas
