@@ -49,9 +49,9 @@ namespace GeroMachineTest
 				};
 				State[] states = new State[3]
 				{
-					new NormalState(TriggerSet1),
-					new NormalState(TriggerSet2),
-					new NormalState(TriggerSet3)
+					new NormalState(),
+					new NormalState(),
+					new NormalState()
 				};
 				var input_transitionMatrix = new Dictionary<State, Dictionary<Trigger, ITransition>>()
 				{
@@ -150,9 +150,9 @@ namespace GeroMachineTest
 				};
 				All_States = new State[3]
 				{
-					new NormalState(TriggerSet1),
-					new NormalState(TriggerSet2),
-					new NormalState(TriggerSet3)
+					new NormalState(),
+					new NormalState(),
+					new NormalState()
 				};
 				setting_MatrixData = new Dictionary<State, Dictionary<Trigger, ITransition>>()
 				{
@@ -255,7 +255,7 @@ namespace GeroMachineTest
 					All_Triggers[0],
 					All_Triggers[3]
 				};
-				State input_State = new NormalState(TestTriggerSet);
+				State input_State = new NormalState();
 				Trigger input_Trigger = All_Triggers[0];
 
 				// Execute & Validate

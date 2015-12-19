@@ -11,7 +11,7 @@ namespace GeroMachineTest
 		public class CreationTest
 		{
 			private static void DummyMethod() { return; }
-			private static State setting_NextState = new NormalState(new Trigger[1] { new Trigger() });
+			private static State setting_NextState = new NormalState();
 			private static Transition.TransitionMethodDelegate setting_TransitionMethod = DummyMethod;
 
 			public static IEnumerable<object> ConstructorTestData
@@ -79,7 +79,7 @@ namespace GeroMachineTest
 			{
 				calledFlag = false;
 
-				setting_NextState = new NormalState(new Trigger[1] { new Trigger() });
+				setting_NextState = new NormalState();
 				setting_TransitionMethod = () => {
 					calledFlag = true;
 					return;
@@ -113,7 +113,7 @@ namespace GeroMachineTest
 
 			public NoTransitionMethodInstanceTest()
 			{
-				setting_NextState = new NormalState(new Trigger[1] { new Trigger() });
+				setting_NextState = new NormalState();
 				transition = new Transition(setting_NextState, null);
 			}
 

@@ -47,9 +47,9 @@ namespace GeroMachineTest
 				};
 				State[] all_states = new State[3]
 				 {
-					new NormalState(TriggerSet1),
-					new NormalState(TriggerSet2),
-					new NormalState(TriggerSet3)
+					new NormalState(),
+					new NormalState(),
+					new NormalState()
 				 };
 				var MatrixData = new Dictionary<State, Dictionary<Trigger, ITransition>>()
 				{
@@ -210,7 +210,7 @@ namespace GeroMachineTest
 
 			private class StateStub : State
 			{
-				public StateStub() : base(null) { }
+				public StateStub() : base() { }
 			}
 
 			private class TriggerStub : Trigger { }

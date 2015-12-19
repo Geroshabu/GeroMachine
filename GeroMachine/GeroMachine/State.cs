@@ -13,7 +13,7 @@ namespace GeroMachine
 		/// </summary>
 		public string StateName { get; set; }
 
-		public State(Trigger[] triggers)
+		public State()
 		{
 		}
 	}

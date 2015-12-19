@@ -28,7 +28,7 @@ namespace GeroMachineTest
                 Trigger[] expected_elements_MonitoredTriggers = (Trigger[])setting_MonitoredTriggers.Clone();
 
 				// Execute
-				NormalState normal_state = new NormalState(setting_MonitoredTriggers);
+				NormalState normal_state = new NormalState();
 
 				// Get results
 				FieldInfo field_info = normal_state.GetType().GetField("MonitoredTriggers",
@@ -51,26 +51,13 @@ namespace GeroMachineTest
 		public class SingleInstanceTest
 		{
 			private NormalState normalState;
-			private Trigger[] monitoredTriggers;
-			private uint[] monitoredTriggerIds;
 
 			/// <summary>
 			/// <see cref="NormalState"/>インスタンスを作成する.
 			/// </summary>
 			public SingleInstanceTest()
 			{
-				monitoredTriggers = new Trigger[10]
-				{
-					new Trigger(), new Trigger(), new Trigger(),
-					new Trigger(), new Trigger(), new Trigger(),
-					new Trigger(), new Trigger(), new Trigger(), new Trigger()
-				};
-				monitoredTriggerIds = new uint[10];
-				for (int i = 0; i < monitoredTriggers.Length; i++)
-				{
-					monitoredTriggerIds[i] = monitoredTriggers[i].Id;
-				}
-				normalState = new NormalState(monitoredTriggers);
+				normalState = new NormalState();
 			}
 		}
 	}
