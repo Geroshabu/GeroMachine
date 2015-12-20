@@ -1,6 +1,6 @@
 namespace GeroMachine
 {
-	class EndState
+	public class EndState
 	{
 	}
 }
