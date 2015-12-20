@@ -5,6 +5,6 @@ namespace GeroMachine
 		/// <summary>
 		/// <see cref="EndState"/>クラスの新しいインスタンスを初期化する.
 		/// </summary>
-		public EndState() : base() { }
+		public EndState() : base(StateType.EndState) { }
 	}
 }

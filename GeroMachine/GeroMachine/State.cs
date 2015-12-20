@@ -27,7 +27,15 @@ namespace GeroMachine
 		/// </summary>
 		public StateType StateType { get; private set; }
 
-		public State()
+		/// <summary>
+		/// <see cref="State"/>クラスの新しいインスタンスを初期化する.
+		/// </summary>
+		/// <remarks>このコンストラクタは, <see cref="State"/>から派生するクラスからだけ呼び出される.</remarks>
+		/// <param name="stateType">この<see cref="State"/>の種類.</param>
+		/// <exception cref="ArgumentOutOfRangeException">
+		/// 引数<paramref name="stateType"/>の値が, <see cref="StateType"/>の定義に含まれない.
+		/// </exception>
+		public State(StateType stateType)
 		{
 		}
 	}

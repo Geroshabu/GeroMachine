@@ -210,7 +210,7 @@ namespace GeroMachineTest
 
 			private class StateStub : State
 			{
-				public StateStub() : base() { }
+				public StateStub() : base(StateType.NormalState) { }
 			}
 
 			private class TriggerStub : Trigger { }
