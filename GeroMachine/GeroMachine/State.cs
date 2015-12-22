@@ -11,6 +11,9 @@ namespace GeroMachine
 		EndState
 	}
 
+	/// <summary>
+	/// 各状態の基本クラス
+	/// </summary>
 	public abstract class State
 	{
 		/// <summary>
