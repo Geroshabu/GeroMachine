@@ -1,6 +1,6 @@
 namespace GeroMachineTest
 {
-	class StateTest
+	public class StateTest
 	{
 	}
 }
