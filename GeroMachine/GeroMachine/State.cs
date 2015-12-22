@@ -37,6 +37,11 @@ namespace GeroMachine
 		/// </exception>
 		public State(StateType stateType)
 		{
+			if (Enum.IsDefined(typeof(StateType), stateType) == false)
+			{
+				throw new ArgumentOutOfRangeException("stateType");
+			}
+
 			StateType = stateType;
 		}
 	}

@@ -29,7 +29,7 @@ namespace GeroMachineTest
 				Assert.Equal(StateType.NormalState, actual_StateType);
 			}
 
-			[Fact(DisplayName = "State:Creation:コンストラクタの引数に不正な値が渡されるテスト", Skip = "Not Implemented")]
+			[Fact(DisplayName = "State:Creation:コンストラクタの引数に不正な値が渡されるテスト")]
 			public void TestOutOfRangeArgumentConstructor()
 			{
 				// Execute & Validate
