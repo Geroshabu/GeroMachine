@@ -14,7 +14,7 @@ namespace GeroMachineTest
 				public DerivedState(StateType stateType) : base(stateType) { }
 			}
 
-			[Fact(DisplayName = "State:Creation:コンストラクタの単純な値初期化テスト", Skip = "Not Implemented")]
+			[Fact(DisplayName = "State:Creation:コンストラクタの単純な値初期化テスト")]
 			public void TestConstructor()
 			{
 				// Execute

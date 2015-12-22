@@ -37,6 +37,7 @@ namespace GeroMachine
 		/// </exception>
 		public State(StateType stateType)
 		{
+			StateType = stateType;
 		}
 	}
 }
