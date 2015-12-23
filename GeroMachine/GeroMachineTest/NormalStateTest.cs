@@ -17,31 +17,16 @@ namespace GeroMachineTest
 			[Fact(Skip = "Under Construction")]
 			public void TestConstructor()
 			{
-				// Prepare datas
-				Trigger[] setting_MonitoredTriggers = new Trigger[3]
-				{
-					new Trigger(),
-					new Trigger(),
-					new Trigger()
-				};
-				Trigger[] expected_MonitoredTriggers = setting_MonitoredTriggers;
-                Trigger[] expected_elements_MonitoredTriggers = (Trigger[])setting_MonitoredTriggers.Clone();
-
 				// Execute
 				NormalState normal_state = new NormalState();
 
 				// Get results
-				FieldInfo field_info = normal_state.GetType().GetField("MonitoredTriggers",
+				FieldInfo field_info = normal_state.GetType().BaseType.GetField("<StateType>k__BackingField",
 					BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Instance);
-				Trigger[] actual_MonitoredTriggers = (Trigger[])field_info.GetValue(normal_state);
+				StateType actual_StateType = (StateType)field_info.GetValue(normal_state);
 
 				// Validata
-				Assert.Equal(expected_MonitoredTriggers, actual_MonitoredTriggers);
-				Assert.Equal(expected_elements_MonitoredTriggers.Length, actual_MonitoredTriggers.Length);
-				for (int i = 0; i < expected_elements_MonitoredTriggers.Length; i++)
-				{
-					Assert.Equal(expected_elements_MonitoredTriggers[i], actual_MonitoredTriggers[i]);
-				}
+				Assert.Equal(StateType.NormalState, actual_StateType);
             }
 		}
 
