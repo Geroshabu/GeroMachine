@@ -14,7 +14,7 @@ namespace GeroMachineTest
 			/// <summary>
 			/// コンストラクタのテスト
 			/// </summary>
-			[Fact]
+			[Fact(DisplayName = "NormalState:Creation:コンストラクタの単純な値初期化テスト")]
 			public void TestConstructor()
 			{
 				// Execute
