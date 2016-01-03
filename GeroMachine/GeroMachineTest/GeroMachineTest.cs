@@ -260,6 +260,18 @@ namespace GeroMachineTest
 				Assert.Same(expected_CurrentState, actual_CurrentState);
 			}
 
+			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:動作していないステートマシンにトリガ入力", Skip = "NotImplemented")]
+			public void TestInputTriggerNotWorking()
+			{
+
+			}
+
+			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:終了状態へ遷移するトリガ入力", Skip = "NotImplemented")]
+			public void TestInputTriggerTransToEndState()
+			{
+
+			}
+
 			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:第一引数がnullエラー")]
 			public void TestInputTriggerNullArgument()
 			{
