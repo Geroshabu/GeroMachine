@@ -85,7 +85,7 @@ namespace GeroMachineTest
 				setting_InitialState = all_states[0];
 			}
 
-			[Fact(DisplayName = "StateMachine:Creation:Constructor:コンストラクタの単純な値初期化テスト")]
+			[Fact(DisplayName = "StateMachine:Creation:Constructor:コンストラクタの単純な値初期化テスト", Skip = "UnderConstruction")]
 			public void TestConstructor()
 			{
 				// Prepare datas
@@ -102,10 +102,14 @@ namespace GeroMachineTest
 				field_info = state_machine.GetType().GetField("TransitionMatrixData",
 					BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Instance);
 				TransitionMatrix actual_TransitionMatrixData = (TransitionMatrix)field_info.GetValue(state_machine);
+				field_info = state_machine.GetType().GetField("<IsWorking>k__BackingField",
+					BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Instance);
+				bool actual_IsWorking = (bool)field_info.GetValue(state_machine);
 
 				// Validate
 				Assert.Same(expected_InitialState, actual_CurrentState);
 				Assert.Same(expected_TransitionMatrixData, actual_TransitionMatrixData);
+				Assert.True(actual_IsWorking);
 			}
 
 			[Fact(DisplayName = "StateMachine:Creation:Constructor:第一引数がnullエラー")]
