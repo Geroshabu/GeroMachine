@@ -150,6 +150,8 @@ namespace GeroMachineTest
 
 			private class SearchTransitionExecuteSetting
 			{
+				public State ExpectedCurrentState { get; set; }
+				public Trigger ExpectedTrigger { get; set; }
 				public ITransition ReturnValue { get; set; }
 				public Exception ThrownException { get; set; }
 			}
@@ -165,6 +167,9 @@ namespace GeroMachineTest
 
 				public ITransition SearchTransition(State currentState, Trigger trigger)
 				{
+					Assert.Same(SearchTransitionSetting.ExpectedCurrentState, currentState);
+					Assert.Same(SearchTransitionSetting.ExpectedTrigger, trigger);
+
 					if (SearchTransitionSetting.ThrownException != null)
 					{
 						throw SearchTransitionSetting.ThrownException;
