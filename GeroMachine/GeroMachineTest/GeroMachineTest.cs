@@ -159,14 +159,18 @@ namespace GeroMachineTest
 			private class TransitionMatrixMock : ITransitionMatrix
 			{
 				SearchTransitionExecuteSetting SearchTransitionSetting { get; set; }
+				public int SearchTransitionCallCount { get; set; }
 
 				public TransitionMatrixMock(SearchTransitionExecuteSetting searchTransitionSetting)
 				{
 					SearchTransitionSetting = searchTransitionSetting;
+					SearchTransitionCallCount = 0;
 				}
 
 				public ITransition SearchTransition(State currentState, Trigger trigger)
 				{
+					SearchTransitionCallCount++;
+
 					Assert.Same(SearchTransitionSetting.ExpectedCurrentState, currentState);
 					Assert.Same(SearchTransitionSetting.ExpectedTrigger, trigger);
 
@@ -188,14 +192,18 @@ namespace GeroMachineTest
 			private class TransitionMock : ITransition
 			{
 				public ExecuteExecuteSetting ExecuteSetting { get; set; }
+				public int ExecuteCallCount { get; set; }
 
 				public TransitionMock(ExecuteExecuteSetting executeSettings)
 				{
 					ExecuteSetting = executeSettings;
+					ExecuteCallCount = 0;
 				}
 
 				public State Execute()
 				{
+					ExecuteCallCount++;
+
 					if (ExecuteSetting.ThrownException != null)
 					{
 						throw ExecuteSetting.ThrownException;
