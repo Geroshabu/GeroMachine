@@ -158,12 +158,12 @@ namespace GeroMachineTest
 
 			private class TransitionMatrixMock : ITransitionMatrix
 			{
-				SearchTransitionExecuteSetting SearchTransitionSetting { get; set; }
+				public List<SearchTransitionExecuteSetting> SearchTransitionSettings { get; set; }
 				public int SearchTransitionCallCount { get; set; }
 
-				public TransitionMatrixMock(SearchTransitionExecuteSetting searchTransitionSetting)
+				public TransitionMatrixMock(List<SearchTransitionExecuteSetting> searchTransitionSettings)
 				{
-					SearchTransitionSetting = searchTransitionSetting;
+					SearchTransitionSettings = searchTransitionSettings;
 					SearchTransitionCallCount = 0;
 				}
 
@@ -171,15 +171,20 @@ namespace GeroMachineTest
 				{
 					SearchTransitionCallCount++;
 
-					Assert.Same(SearchTransitionSetting.ExpectedCurrentState, currentState);
-					Assert.Same(SearchTransitionSetting.ExpectedTrigger, trigger);
+					Assert.NotNull(SearchTransitionSettings);
+					Assert.True(SearchTransitionCallCount <= SearchTransitionSettings.Count);
 
-					if (SearchTransitionSetting.ThrownException != null)
+					SearchTransitionExecuteSetting setting = SearchTransitionSettings[SearchTransitionCallCount - 1];
+
+					Assert.Same(setting.ExpectedCurrentState, currentState);
+					Assert.Same(setting.ExpectedTrigger, trigger);
+
+					if (setting.ThrownException != null)
 					{
-						throw SearchTransitionSetting.ThrownException;
+						throw setting.ThrownException;
 					}
 
-					return SearchTransitionSetting.ReturnValue;
+					return setting.ReturnValue;
 				}
 			}
 
@@ -191,12 +196,12 @@ namespace GeroMachineTest
 
 			private class TransitionMock : ITransition
 			{
-				public ExecuteExecuteSetting ExecuteSetting { get; set; }
+				public List<ExecuteExecuteSetting> ExecuteSettings { get; set; }
 				public int ExecuteCallCount { get; set; }
 
-				public TransitionMock(ExecuteExecuteSetting executeSettings)
+				public TransitionMock(List<ExecuteExecuteSetting> executeSettings)
 				{
-					ExecuteSetting = executeSettings;
+					ExecuteSettings = executeSettings;
 					ExecuteCallCount = 0;
 				}
 
@@ -204,12 +209,17 @@ namespace GeroMachineTest
 				{
 					ExecuteCallCount++;
 
-					if (ExecuteSetting.ThrownException != null)
+					Assert.NotNull(ExecuteSettings);
+					Assert.True(ExecuteCallCount <= ExecuteSettings.Count);
+
+					ExecuteExecuteSetting setting = ExecuteSettings[ExecuteCallCount - 1];
+
+					if (setting.ThrownException != null)
 					{
-						throw ExecuteSetting.ThrownException;
+						throw setting.ThrownException;
 					}
 
-					return ExecuteSetting.ReturnValue;
+					return setting.ReturnValue;
 				}
 			}
 
