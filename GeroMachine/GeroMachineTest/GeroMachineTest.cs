@@ -148,6 +148,58 @@ namespace GeroMachineTest
 				}
 			}
 
+			private class SearchTransitionExecuteSetting
+			{
+				public ITransition ReturnValue { get; set; }
+				public Exception ThrownException { get; set; }
+			}
+
+			private class TransitionMatrixMock : ITransitionMatrix
+			{
+				SearchTransitionExecuteSetting SearchTransitionSetting { get; set; }
+
+				public TransitionMatrixMock(SearchTransitionExecuteSetting searchTransitionSetting)
+				{
+					SearchTransitionSetting = searchTransitionSetting;
+				}
+
+				public ITransition SearchTransition(State currentState, Trigger trigger)
+				{
+					if (SearchTransitionSetting.ThrownException != null)
+					{
+						throw SearchTransitionSetting.ThrownException;
+					}
+
+					return SearchTransitionSetting.ReturnValue;
+				}
+			}
+
+			private class ExecuteExecuteSetting
+			{
+				public State ReturnValue { get; set; }
+				public Exception ThrownException { get; set; }
+			}
+
+			private class TransitionMock : ITransition
+			{
+				public ExecuteExecuteSetting ExecuteSetting { get; set; }
+
+				public TransitionMock(ExecuteExecuteSetting executeSettings)
+				{
+					ExecuteSetting = executeSettings;
+				}
+
+				public State Execute()
+				{
+					if (ExecuteSetting.ThrownException != null)
+					{
+						throw ExecuteSetting.ThrownException;
+					}
+
+					return ExecuteSetting.ReturnValue;
+				}
+			}
+
 			private class TransitionMatrixSearchTransitionThrowArgumentNullExceptionMock : ITransitionMatrix
 			{
 				public bool HasCalledSearchTransition { get; set; }
