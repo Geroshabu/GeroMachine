@@ -310,10 +310,24 @@ namespace GeroMachineTest
 				State before_CurrentState = (State)current_state_field_info.GetValue(StateMachineInstance);
 
 				// Prepare mocks
-				var transition_mock = new TransitionExecuteReturnParticularStateMock(state_stub);
-				transition_mock.HasCalledExecute = false;
-				var transition_matrix_mock = new TransitionMatrixSearchTransitionReturnParticularTransitionMock(transition_mock);
-				transition_matrix_mock.HasCalledSearchTransition = false;
+				List<ExecuteExecuteSetting> execute_settings = new List<ExecuteExecuteSetting>()
+				{
+					new ExecuteExecuteSetting() { ThrownException = null, ReturnValue = state_stub }
+				};
+				TransitionMock transition_mock = new TransitionMock(execute_settings);
+
+				List<SearchTransitionExecuteSetting> search_transition_settings = new List<SearchTransitionExecuteSetting>()
+				{
+					new SearchTransitionExecuteSetting()
+					{
+						ExpectedCurrentState = before_CurrentState,
+						ExpectedTrigger = input_Trigger,
+						ThrownException = null,
+						ReturnValue = transition_mock
+					}
+				};
+				TransitionMatrixMock transition_matrix_mock = new TransitionMatrixMock(search_transition_settings);
+
 				FieldInfo transition_matrix_data_field_info = StateMachineInstance.GetType().GetField("TransitionMatrixData",
 					BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Instance);
 				transition_matrix_data_field_info.SetValue(StateMachineInstance, transition_matrix_mock);
@@ -325,8 +339,8 @@ namespace GeroMachineTest
 				State actual_CurrentState = (State)current_state_field_info.GetValue(StateMachineInstance);
 
 				// Validate
-				Assert.True(transition_matrix_mock.HasCalledSearchTransition);
-				Assert.True(transition_mock.HasCalledExecute);
+				Assert.Equal(search_transition_settings.Count, transition_matrix_mock.SearchTransitionCallCount);
+				Assert.Equal(execute_settings.Count, transition_mock.ExecuteCallCount);
 				Assert.NotSame(before_CurrentState, actual_CurrentState);
 				Assert.Same(expected_CurrentState, actual_CurrentState);
 			}
@@ -347,38 +361,67 @@ namespace GeroMachineTest
 			public void TestSearchTransitionFailedSearchTransitionArgumentNull()
 			{
 				// Prepare datas
-				var transition_matrix_mock = new TransitionMatrixSearchTransitionThrowArgumentNullExceptionMock();
-				transition_matrix_mock.HasCalledSearchTransition = false;
-				State setting_InitialState = new StateStub();
+				FieldInfo field_info = StateMachineInstance.GetType().GetField("CurrentState",
+					BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Instance);
+				field_info.SetValue(StateMachineInstance, null);
 				Trigger input_Trigger = new TriggerStub();
 
 				// Prepare mocks
-				FieldInfo field_info = StateMachineInstance.GetType().GetField("TransitionMatrixData",
+				var search_transition_settings = new List<SearchTransitionExecuteSetting>()
+				{
+					new SearchTransitionExecuteSetting()
+					{
+						ExpectedCurrentState = null,
+						ExpectedTrigger = input_Trigger,
+						ThrownException = new ArgumentNullException("currentState"),
+						ReturnValue = null
+					}
+				};
+				TransitionMatrixMock transition_matrix_mock = new TransitionMatrixMock(search_transition_settings);
+				field_info = StateMachineInstance.GetType().GetField("TransitionMatrixData",
 					BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Instance);
 				field_info.SetValue(StateMachineInstance, transition_matrix_mock);
 
 				// Execute & Validate
 				Assert.Throws<ArgumentNullException>(
-					"exception mock",
+					"currentState",
 					() => StateMachineInstance.InputTrigger(input_Trigger));
+
+				// Validate
+				Assert.Equal(search_transition_settings.Count, transition_matrix_mock.SearchTransitionCallCount);
 			}
 
 			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:状態遷移図に現在の状態が無い内部エラー")]
 			public void TestSearchTransitionFailedSearchTransitionArgumentOutOfRange()
 			{
 				// Prepare datas
-				var transition_matrix_mock = new TransitionMatrixSearchTransitionThrowArgumentOutOfRangeExceptionMock();
-				transition_matrix_mock.HasCalledSearchTransition = false;
 				State setting_InitialState = new StateStub();
 				Trigger input_Trigger = new TriggerStub();
+				FieldInfo field_info = StateMachineInstance.GetType().GetField("CurrentState",
+					BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Instance);
+				State before_CurrentState = (State)field_info.GetValue(StateMachineInstance);
 
 				// Prepare mocks
-				FieldInfo field_info = StateMachineInstance.GetType().GetField("TransitionMatrixData",
+				var search_transition_settings = new List<SearchTransitionExecuteSetting>()
+				{
+					new SearchTransitionExecuteSetting()
+					{
+						ExpectedCurrentState = before_CurrentState,
+						ExpectedTrigger = input_Trigger,
+						ThrownException = new ArgumentOutOfRangeException("currentState"),
+						ReturnValue = null
+					}
+				};
+				TransitionMatrixMock transition_matrix_mock = new TransitionMatrixMock(search_transition_settings);
+				field_info = StateMachineInstance.GetType().GetField("TransitionMatrixData",
 					BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Instance);
 				field_info.SetValue(StateMachineInstance, transition_matrix_mock);
 
 				// Execute & Validate
 				Assert.Throws<InvalidOperationException>(() => StateMachineInstance.InputTrigger(input_Trigger));
+
+				// Validate
+				Assert.Equal(search_transition_settings.Count, transition_matrix_mock.SearchTransitionCallCount);
 			}
 		}
 	}
