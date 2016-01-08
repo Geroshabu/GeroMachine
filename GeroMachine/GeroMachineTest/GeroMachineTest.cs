@@ -401,7 +401,6 @@ namespace GeroMachineTest
 			public void TestSearchTransitionFailedSearchTransitionArgumentOutOfRange()
 			{
 				// Prepare datas
-				State setting_InitialState = new StateStub();
 				Trigger input_Trigger = new TriggerStub();
 				FieldInfo field_info = StateMachineInstance.GetType().GetField("CurrentState",
 					BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Instance);
