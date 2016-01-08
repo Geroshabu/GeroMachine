@@ -387,8 +387,14 @@ namespace GeroMachineTest
 					"currentState",
 					() => StateMachineInstance.InputTrigger(input_Trigger));
 
+				// Get result
+				field_info = StateMachineInstance.GetType().GetField("CurrentState",
+					BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Instance);
+				State actual_CurrentState = (State)field_info.GetValue(StateMachineInstance);
+
 				// Validate
 				Assert.Equal(search_transition_settings.Count, transition_matrix_mock.SearchTransitionCallCount);
+				Assert.Null(actual_CurrentState);
 			}
 
 			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:状態遷移図に現在の状態が無い内部エラー")]
@@ -420,8 +426,14 @@ namespace GeroMachineTest
 				// Execute & Validate
 				Assert.Throws<InvalidOperationException>(() => StateMachineInstance.InputTrigger(input_Trigger));
 
+				// Get result
+				field_info = StateMachineInstance.GetType().GetField("CurrentState",
+					BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Instance);
+				State actual_CurrentState = (State)field_info.GetValue(StateMachineInstance);
+
 				// Validate
 				Assert.Equal(search_transition_settings.Count, transition_matrix_mock.SearchTransitionCallCount);
+				Assert.Same(before_CurrentState, actual_CurrentState);
 			}
 		}
 	}
