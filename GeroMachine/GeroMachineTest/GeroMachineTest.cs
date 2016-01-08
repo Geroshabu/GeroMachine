@@ -223,66 +223,6 @@ namespace GeroMachineTest
 				}
 			}
 
-			private class TransitionMatrixSearchTransitionThrowArgumentNullExceptionMock : ITransitionMatrix
-			{
-				public bool HasCalledSearchTransition { get; set; }
-				public ITransition SearchTransition(State currentState, Trigger trigger)
-				{
-					HasCalledSearchTransition = true;
-					throw new ArgumentNullException("exception mock");
-				}
-			}
-
-			private class TransitionMatrixSearchTransitionThrowArgumentOutOfRangeExceptionMock : ITransitionMatrix
-			{
-				public bool HasCalledSearchTransition { get; set; }
-				public ITransition SearchTransition(State currentState, Trigger trigger)
-				{
-					HasCalledSearchTransition = true;
-					throw new ArgumentOutOfRangeException("exception mock");
-				}
-			}
-
-			private class TransitionMatrixSearchTransitionReturnNullMock : ITransitionMatrix
-			{
-				public bool HasCalledSearchTransition { get; set; }
-				public ITransition SearchTransition(State currentState, Trigger trigger)
-				{
-					HasCalledSearchTransition = true;
-					return null;
-				}
-			}
-
-			private class TransitionMatrixSearchTransitionReturnParticularTransitionMock : ITransitionMatrix
-			{
-				public ITransition ReturnedTransition { get; set; }
-				public bool HasCalledSearchTransition { get; set; }
-				public TransitionMatrixSearchTransitionReturnParticularTransitionMock(ITransition returnedTransition)
-				{
-					ReturnedTransition = returnedTransition;
-				}
-				public ITransition SearchTransition(State currentState, Trigger trigger)
-				{
-					HasCalledSearchTransition = true;
-					return ReturnedTransition;
-				}
-			}
-
-			private class TransitionExecuteReturnParticularStateMock : ITransition
-			{
-				public State ReturnedState { get; set; }
-				public bool HasCalledExecute { get; set; }
-				public TransitionExecuteReturnParticularStateMock(State returnedState)
-				{
-					ReturnedState = returnedState;
-				}
-				public State Execute()
-				{
-					HasCalledExecute = true;
-					return ReturnedState;
-				}
-			}
-
 			private class StateStub : State
 			{
 				public StateStub() : base() { }
