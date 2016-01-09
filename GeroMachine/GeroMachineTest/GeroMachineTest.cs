@@ -292,13 +292,83 @@ namespace GeroMachineTest
 			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:動作していないステートマシンにトリガ入力", Skip = "NotImplemented")]
 			public void TestInputTriggerNotWorking()
 			{
+				// Prepare datas
+				TriggerStub input_trigger = new TriggerStub();
+				FieldInfo current_state_field_info = StateMachineInstance.GetType().GetField("CurrentState",
+					BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Instance);
+				State before_CurrentState = (State)current_state_field_info.GetValue(StateMachineInstance);
+				FieldInfo is_working_field_info = StateMachineInstance.GetType().GetField("<IsWorking>k__BackingField",
+					BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Instance);
+				is_working_field_info.SetValue(StateMachineInstance, false);
 
+				// Prepare mocks
+				var search_transition_settings = new List<SearchTransitionExecuteSetting>();
+				var transition_matrix_mock = new TransitionMatrixMock(search_transition_settings);
+				FieldInfo transition_matrix_data_field_info = StateMachineInstance.GetType().GetField("TransitionMatrixData",
+					BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Instance);
+				transition_matrix_data_field_info.SetValue(StateMachineInstance, transition_matrix_mock);
+
+				// Execute
+				StateMachineInstance.InputTrigger(input_trigger);
+
+				// Get results
+				State actual_CurrentState = (State)current_state_field_info.GetValue(StateMachineInstance);
+
+				// Validate
+				Assert.Equal(search_transition_settings.Count, transition_matrix_mock.SearchTransitionCallCount);
+				Assert.Same(before_CurrentState, actual_CurrentState);
 			}
 
 			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:終了状態へ遷移するトリガ入力", Skip = "NotImplemented")]
 			public void TestInputTriggerTransToEndState()
 			{
+				// Prepare datas
+				TriggerStub input_Trigger = new TriggerStub();
+				FieldInfo current_state_field_info = StateMachineInstance.GetType().GetField("CurrentState",
+					BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Instance);
+				State before_CurrentState = (State)current_state_field_info.GetValue(StateMachineInstance);
+				State execute_return_value = new StateStub();
 
+				// Prepare mocks
+				var execute_settings = new List<ExecuteExecuteSetting>()
+				{
+					new ExecuteExecuteSetting()
+					{
+						ThrownException = null,
+						ReturnValue = execute_return_value
+					}
+				};
+				TransitionMock transition_mock = new TransitionMock(execute_settings);
+				var search_transition_settings = new List<SearchTransitionExecuteSetting>()
+				{
+					new SearchTransitionExecuteSetting()
+					{
+						ExpectedCurrentState = before_CurrentState,
+						ExpectedTrigger = input_Trigger,
+						ThrownException = null,
+						ReturnValue = transition_mock
+					}
+				};
+				TransitionMatrixMock transition_matrix_mock = new TransitionMatrixMock(search_transition_settings);
+				FieldInfo transition_matrix_data_field_info = StateMachineInstance.GetType().GetField("TransitionMatrixData",
+					BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Instance);
+				transition_matrix_data_field_info.SetValue(StateMachineInstance, transition_matrix_mock);
+
+				// Execute
+				StateMachineInstance.InputTrigger(input_Trigger);
+
+				// Get results
+				FieldInfo is_working_field_info = StateMachineInstance.GetType().GetField("<IsWorking>k__BackingField",
+					BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Instance);
+				bool actual_IsWorking = (bool)is_working_field_info.GetValue(StateMachineInstance);
+				State actual_CurrentState = (State)current_state_field_info.GetValue(StateMachineInstance);
+
+				// Validate
+				Assert.Equal(search_transition_settings.Count, transition_matrix_mock.SearchTransitionCallCount);
+				Assert.Equal(execute_settings.Count, transition_mock.ExecuteCallCount);
+				Assert.NotSame(before_CurrentState, actual_CurrentState);
+				Assert.Same(execute_return_value, actual_CurrentState);
+				Assert.False(actual_IsWorking);
 			}
 
 			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:第一引数がnullエラー")]
