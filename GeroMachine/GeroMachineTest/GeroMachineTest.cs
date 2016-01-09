@@ -289,7 +289,7 @@ namespace GeroMachineTest
 				Assert.Same(expected_CurrentState, actual_CurrentState);
 			}
 
-			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:動作していないステートマシンにトリガ入力", Skip = "NotImplemented")]
+			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:動作していないステートマシンにトリガ入力")]
 			public void TestInputTriggerNotWorking()
 			{
 				// Prepare datas
@@ -319,7 +319,7 @@ namespace GeroMachineTest
 				Assert.Same(before_CurrentState, actual_CurrentState);
 			}
 
-			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:終了状態へ遷移するトリガ入力", Skip = "NotImplemented")]
+			[Fact(DisplayName = "StateMachine:RegularInstance:InputTrigger:終了状態へ遷移するトリガ入力")]
 			public void TestInputTriggerTransToEndState()
 			{
 				// Prepare datas
