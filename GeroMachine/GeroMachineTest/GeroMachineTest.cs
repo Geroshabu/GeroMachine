@@ -327,7 +327,7 @@ namespace GeroMachineTest
 				FieldInfo current_state_field_info = StateMachineInstance.GetType().GetField("CurrentState",
 					BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Instance);
 				State before_CurrentState = (State)current_state_field_info.GetValue(StateMachineInstance);
-				State execute_return_value = new StateStub();
+				State execute_return_value = new EndState();
 
 				// Prepare mocks
 				var execute_settings = new List<ExecuteExecuteSetting>()
