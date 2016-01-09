@@ -38,6 +38,7 @@ namespace GeroMachine
 
 			CurrentState = initialState;
 			TransitionMatrixData = matrixData;
+			IsWorking = true;
 		}
 
 		/// <summary>
@@ -75,6 +76,11 @@ namespace GeroMachine
 			if (transition != null)
 			{
 				CurrentState = transition.Execute();
+			}
+
+			if (CurrentState.StateType == StateType.EndState)
+			{
+				IsWorking = false;
 			}
 		}
 
