@@ -61,6 +61,11 @@ namespace GeroMachine
 				throw new ArgumentNullException("trigger");
 			}
 
+			if (!IsWorking)
+			{
+				return;
+			}
+
 			System.Diagnostics.Debug.Assert(CurrentState != null);
 
 			ITransition transition;
