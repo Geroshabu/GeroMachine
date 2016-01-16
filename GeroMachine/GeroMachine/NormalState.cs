@@ -8,6 +8,6 @@ namespace GeroMachine
 {
 	public class NormalState : State
 	{
-		public NormalState() : base() { }
+		public NormalState() : base(StateType.NormalState) { }
 	}
 }

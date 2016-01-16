@@ -30,15 +30,17 @@ namespace GeroMachineSample
 				new Trigger(),
 				new Trigger()
 			};
-			State[] all_states = new State[3]
+			State[] all_states = new State[4]
 			{
 				new NormalState(),
 				new NormalState(),
-				new NormalState()
+				new NormalState(),
+				new EndState()
 			};
 			all_states[0].StateName = "State 1";
 			all_states[1].StateName = "State 2";
 			all_states[2].StateName = "State 3";
+			all_states[3].StateName = "End State";
 			var matrixData = new Dictionary<State, Dictionary<Trigger, ITransition>>
 			{
 				{
@@ -63,6 +65,7 @@ namespace GeroMachineSample
 					new Dictionary<Trigger, ITransition>
 					{
 						{ AllTriggers[0], new Transition(all_states[2], null) },
+						{ AllTriggers[1], new Transition(all_states[3], null) },
 						{ AllTriggers[2], new Transition(all_states[0], null) }
 					}
 				}
@@ -71,25 +74,31 @@ namespace GeroMachineSample
 			TransitionMatrix transitino_matrix = new TransitionMatrix(matrixData);
 
 			MainStateMachine = new StateMachine(all_states[0], transitino_matrix);
-			CurrentStateNameLabel.Text = MainStateMachine.CurrentStateName;
+			ShowStateInformation();
 		}
 
 		private void Trigger1Button_Click(object sender, EventArgs e)
 		{
 			MainStateMachine.InputTrigger(AllTriggers[0]);
-			CurrentStateNameLabel.Text = MainStateMachine.CurrentStateName;
+			ShowStateInformation();
 		}
 
 		private void Trigger2Button_Click(object sender, EventArgs e)
 		{
 			MainStateMachine.InputTrigger(AllTriggers[1]);
-			CurrentStateNameLabel.Text = MainStateMachine.CurrentStateName;
+			ShowStateInformation();
 		}
 
 		private void Trigger3Button_Click(object sender, EventArgs e)
 		{
 			MainStateMachine.InputTrigger(AllTriggers[2]);
+			ShowStateInformation();
+		}
+
+		private void ShowStateInformation()
+		{
 			CurrentStateNameLabel.Text = MainStateMachine.CurrentStateName;
+			WorkingStatusLabel.Text = (MainStateMachine.IsWorking ? "Working" : "NotWorking");
 		}
 	}
 }

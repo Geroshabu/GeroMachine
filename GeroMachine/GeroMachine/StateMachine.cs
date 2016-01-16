@@ -12,6 +12,12 @@ namespace GeroMachine
 		private ITransitionMatrix TransitionMatrixData;
 
 		/// <summary>
+		/// このステートマシンが動作中かどうかを取得.
+		/// </summary>
+		/// <value>true : 動作中, false : 終了状態に到達済み</value>
+		public bool IsWorking { get; private set; }
+
+		/// <summary>
 		/// 初期状態と状態遷移表を指定し,
 		/// <see cref="StateMachine"/>クラスのインスタンスを初期化する.
 		/// </summary>
@@ -32,6 +38,7 @@ namespace GeroMachine
 
 			CurrentState = initialState;
 			TransitionMatrixData = matrixData;
+			IsWorking = true;
 		}
 
 		/// <summary>
@@ -54,6 +61,11 @@ namespace GeroMachine
 				throw new ArgumentNullException("trigger");
 			}
 
+			if (!IsWorking)
+			{
+				return;
+			}
+
 			System.Diagnostics.Debug.Assert(CurrentState != null);
 
 			ITransition transition;
@@ -69,6 +81,11 @@ namespace GeroMachine
 			if (transition != null)
 			{
 				CurrentState = transition.Execute();
+			}
+
+			if (CurrentState.StateType == StateType.EndState)
+			{
+				IsWorking = false;
 			}
 		}
 
