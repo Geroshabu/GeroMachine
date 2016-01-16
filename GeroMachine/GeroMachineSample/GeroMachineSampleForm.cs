@@ -71,24 +71,29 @@ namespace GeroMachineSample
 			TransitionMatrix transitino_matrix = new TransitionMatrix(matrixData);
 
 			MainStateMachine = new StateMachine(all_states[0], transitino_matrix);
-			CurrentStateNameLabel.Text = MainStateMachine.CurrentStateName;
+			ShowStateInformation();
 		}
 
 		private void Trigger1Button_Click(object sender, EventArgs e)
 		{
 			MainStateMachine.InputTrigger(AllTriggers[0]);
-			CurrentStateNameLabel.Text = MainStateMachine.CurrentStateName;
+			ShowStateInformation();
 		}
 
 		private void Trigger2Button_Click(object sender, EventArgs e)
 		{
 			MainStateMachine.InputTrigger(AllTriggers[1]);
-			CurrentStateNameLabel.Text = MainStateMachine.CurrentStateName;
+			ShowStateInformation();
 		}
 
 		private void Trigger3Button_Click(object sender, EventArgs e)
 		{
 			MainStateMachine.InputTrigger(AllTriggers[2]);
+			ShowStateInformation();
+		}
+
+		private void ShowStateInformation()
+		{
 			CurrentStateNameLabel.Text = MainStateMachine.CurrentStateName;
 		}
 	}
