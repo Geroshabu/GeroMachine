@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['itransition',['ITransition',['../interface_gero_machine_1_1_i_transition.html',1,'GeroMachine']]],
-  ['itransitionmatrix',['ITransitionMatrix',['../interface_gero_machine_1_1_i_transition_matrix.html',1,'GeroMachine']]]
+  ['endstate',['EndState',['../class_gero_machine_1_1_end_state.html',1,'GeroMachine']]]
 ];

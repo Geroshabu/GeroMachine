@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['normalstate_2ecs',['NormalState.cs',['../_normal_state_8cs.html',1,'']]]
+  ['itransition_2ecs',['ITransition.cs',['../_i_transition_8cs.html',1,'']]],
+  ['itransitionmatrix_2ecs',['ITransitionMatrix.cs',['../_i_transition_matrix_8cs.html',1,'']]]
 ];
