@@ -98,6 +98,7 @@ namespace GeroMachineSample
 		private void ShowStateInformation()
 		{
 			CurrentStateNameLabel.Text = MainStateMachine.CurrentStateName;
+			WorkingStatusLabel.Text = (MainStateMachine.IsWorking ? "Working" : "NotWorking");
 		}
 	}
 }
