@@ -7,14 +7,14 @@ namespace GeroMachineTest
 	public class NormalStateTest
 	{
 		/// <summary>
-		/// ƒCƒ“ƒXƒ^ƒ“ƒXìì¬‘O, ‚¨‚æ‚Ñì¬‚ÌƒeƒXƒg
+		/// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ä½œä½œæˆå‰, ãŠã‚ˆã³ä½œæˆæ™‚ã®ãƒ†ã‚¹ãƒˆ
 		/// </summary>
 		public class CreationTest
 		{
 			/// <summary>
-			/// ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ÌƒeƒXƒg
+			/// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã®ãƒ†ã‚¹ãƒˆ
 			/// </summary>
-			[Fact(DisplayName = "NormalState:Creation:ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚Ì’Pƒ‚È’l‰Šú‰»ƒeƒXƒg")]
+			[Fact(DisplayName = "NormalState:Creation:ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã®å˜ç´”ãªå€¤åˆæœŸåŒ–ãƒ†ã‚¹ãƒˆ")]
 			public void TestConstructor()
 			{
 				// Execute
@@ -31,14 +31,14 @@ namespace GeroMachineTest
 		}
 
 		/// <summary>
-		/// ‚ ‚éƒCƒ“ƒXƒ^ƒ“ƒX‚É‘Î‚µ‚Ä‚ÌƒeƒXƒg
+		/// ã‚ã‚‹ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã«å¯¾ã—ã¦ã®ãƒ†ã‚¹ãƒˆ
 		/// </summary>
 		public class SingleInstanceTest
 		{
 			private NormalState normalState;
 
 			/// <summary>
-			/// <see cref="NormalState"/>ƒCƒ“ƒXƒ^ƒ“ƒX‚ğì¬‚·‚é.
+			/// <see cref="NormalState"/>ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ä½œæˆã™ã‚‹.
 			/// </summary>
 			public SingleInstanceTest()
 			{
